@@ -145,6 +145,187 @@ import { Input, Textarea, Select, Checkbox, Radio } from '@hudl/uniform-web'
 />
 ```
 
+### Resizable Layout System
+
+For complex multi-panel layouts with resizable and collapsible sections, use the Performance Core Layout system built on react-resizable-panels.
+
+```typescript
+import { LayoutGroup, LayoutPanel, LayoutBorder, Placement } from '@hudl/performance-core-layout'
+import { useState } from 'react'
+
+function MyLayout() {
+  const [isDragging, setIsDragging] = useState(false)
+  const [groupSize, setGroupSize] = useState(0)
+
+  return (
+    <LayoutGroup
+      direction="horizontal"
+      onSizeChange={setGroupSize}
+    >
+      {/* Left sidebar panel */}
+      <LayoutPanel
+        panel={{
+          key: 'sidebar',
+          placement: Placement.Left,
+          size: 20, // 20% of container
+          minSize: { percentage: 15 },
+          maxSize: { percentage: 40 },
+          canResize: true,
+          canCollapse: true
+        }}
+        groupSize={groupSize}
+        isDragging={isDragging}
+      >
+        <div style={{ padding: 'var(--u-space-one)' }}>
+          <Title as="h3" size="medium">Sidebar</Title>
+          <Text>Sidebar content here</Text>
+        </div>
+      </LayoutPanel>
+
+      {/* Resize handle */}
+      <LayoutBorder onDragging={setIsDragging} />
+
+      {/* Main content panel */}
+      <LayoutPanel
+        panel={{
+          key: 'main',
+          placement: Placement.Center
+        }}
+        groupSize={groupSize}
+        isDragging={isDragging}
+      >
+        <div style={{ padding: 'var(--u-space-one)' }}>
+          <Title as="h2" size="large">Main Content</Title>
+          <Text>Main content here</Text>
+        </div>
+      </LayoutPanel>
+    </LayoutGroup>
+  )
+}
+```
+
+#### Layout Components
+
+**LayoutGroup** - Container for resizable panels
+- Props:
+  - `direction`: `'horizontal'` or `'vertical'` - direction of panel layout
+  - `onSizeChange`: Callback when group size changes
+  - Inherits all [PanelGroup props from react-resizable-panels](https://github.com/bvaughn/react-resizable-panels)
+
+**LayoutPanel** - Individual resizable panel
+- Props:
+  - `panel`: PanelInfo object (see below)
+  - `groupSize`: Current size of the parent LayoutGroup
+  - `isDragging`: Whether a border is currently being dragged
+  - `onCollapse`: Callback when panel collapses
+  - `onExpand`: Callback when panel expands
+  - `onResize`: Callback when panel is resized
+
+**LayoutBorder** - Resize handle between panels
+- Props:
+  - `onDragging`: Callback when dragging starts/stops
+  - `isDisabled`: Disable resizing
+
+**PanelInfo** - Configuration object for LayoutPanel
+```typescript
+{
+  key: string                    // Unique identifier
+  placement: Placement           // Panel position (Left, Center, Right, Top, Bottom, etc.)
+  size?: number                  // Initial size (percentage)
+  minSize?: {
+    percentage?: number          // Min size as percentage
+    pixels?: number             // Min size in pixels
+  }
+  maxSize?: {
+    percentage?: number          // Max size as percentage
+    pixels?: number             // Max size in pixels
+  }
+  canResize?: boolean           // Allow resizing
+  canCollapse?: boolean         // Allow collapsing
+  isCollapsed?: boolean         // Initial collapsed state
+}
+```
+
+**Placement** - Enum for panel positioning
+- `Placement.Main`, `Placement.Content`, `Placement.Primary`, `Placement.Secondary`
+- `Placement.Top`, `Placement.Left`, `Placement.Center`, `Placement.Right`, `Placement.Bottom`
+
+#### Common Layout Patterns
+
+**Two-panel horizontal layout (sidebar + main)**
+```typescript
+<LayoutGroup direction="horizontal" onSizeChange={setSize}>
+  <LayoutPanel panel={{ key: 'sidebar', placement: Placement.Left, size: 25 }}>
+    Sidebar
+  </LayoutPanel>
+  <LayoutBorder onDragging={setDragging} />
+  <LayoutPanel panel={{ key: 'main', placement: Placement.Center }}>
+    Main content
+  </LayoutPanel>
+</LayoutGroup>
+```
+
+**Three-panel layout**
+```typescript
+<LayoutGroup direction="horizontal" onSizeChange={setSize}>
+  <LayoutPanel panel={{ key: 'left', placement: Placement.Left, size: 20 }}>
+    Left panel
+  </LayoutPanel>
+  <LayoutBorder onDragging={setDragging} />
+  <LayoutPanel panel={{ key: 'center', placement: Placement.Center }}>
+    Center panel
+  </LayoutPanel>
+  <LayoutBorder onDragging={setDragging} />
+  <LayoutPanel panel={{ key: 'right', placement: Placement.Right, size: 20 }}>
+    Right panel
+  </LayoutPanel>
+</LayoutGroup>
+```
+
+**Vertical split with collapsible bottom panel**
+```typescript
+<LayoutGroup direction="vertical" onSizeChange={setSize}>
+  <LayoutPanel panel={{ key: 'top', placement: Placement.Top }}>
+    Main content
+  </LayoutPanel>
+  <LayoutBorder onDragging={setDragging} />
+  <LayoutPanel
+    panel={{
+      key: 'bottom',
+      placement: Placement.Bottom,
+      size: 30,
+      canCollapse: true,
+      minSize: { percentage: 10 }
+    }}
+    onCollapse={handleCollapse}
+    onExpand={handleExpand}
+  >
+    Collapsible bottom panel
+  </LayoutPanel>
+</LayoutGroup>
+```
+
+**Nested layouts (vertical inside horizontal)**
+```typescript
+<LayoutGroup direction="horizontal" onSizeChange={setSize}>
+  <LayoutPanel panel={{ key: 'sidebar', placement: Placement.Left, size: 25 }}>
+    Sidebar
+  </LayoutPanel>
+  <LayoutBorder onDragging={setDragging} />
+  <LayoutPanel panel={{ key: 'main', placement: Placement.Center }}>
+    <LayoutGroup direction="vertical" onSizeChange={setInnerSize}>
+      <LayoutPanel panel={{ key: 'top', placement: Placement.Top }}>
+        Top section
+      </LayoutPanel>
+      <LayoutBorder onDragging={setInnerDragging} />
+      <LayoutPanel panel={{ key: 'bottom', placement: Placement.Bottom }}>
+        Bottom section
+      </LayoutPanel>
+    </LayoutGroup>
+  </LayoutPanel>
+</LayoutGroup>
+```
+
 ### Environment Component
 
 Always wrap your app in the Environment component for proper theming:
@@ -590,7 +771,8 @@ Common components you'll use frequently:
 
 - **Typography**: `Title`, `Text`
 - **Buttons**: `Button`
-- **Layout**: `Card`, `Divider` (use flexbox with CSS variables for other layouts)
+- **Layout**: `Card`, `Divider` (use flexbox with CSS variables for simple layouts)
+- **Resizable Layouts**: `LayoutGroup`, `LayoutPanel`, `LayoutBorder` (for multi-panel resizable layouts)
 - **Forms**: `Input`, `Textarea`, `Select`, `Checkbox`, `Radio`
 - **Feedback**: `Spinner`
 - **Utility**: `Environment`

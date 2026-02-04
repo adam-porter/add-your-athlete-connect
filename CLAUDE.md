@@ -32,7 +32,9 @@ This will commit your changes and push the branch to GitHub.
 
 **Available components:** `Environment`, `Title`, `Text`, `Button`, `Card`, `Input`, `Textarea`, `Select`, `Checkbox`, `Radio`, `Spinner`, `Divider`
 
-**Components that DON'T exist:** `Stack`, `Inline`, `Container` (use flexbox with CSS variables instead)
+**Resizable layout components:** `LayoutGroup`, `LayoutPanel`, `LayoutBorder` (from `@hudl/performance-core-layout`)
+
+**Components that DON'T exist:** `Stack`, `Inline`, `Container` (use flexbox with CSS variables for simple layouts, or the resizable layout system for complex multi-panel layouts)
 
 **Common CSS variables:**
 - Colors: `var(--u-color-emphasis-foreground)`, `var(--u-color-background-container)`
@@ -51,6 +53,32 @@ This will commit your changes and push the branch to GitHub.
   <Button buttonType="primary">Action</Button>
 </div>
 ```
+
+### Resizable Layout System
+
+**For complex layouts with resizable panels, use the Performance Core Layout system:**
+
+```typescript
+import { LayoutGroup, LayoutPanel, LayoutBorder, Placement } from '@hudl/performance-core-layout'
+
+<LayoutGroup direction="horizontal" onSizeChange={handleSizeChange}>
+  <LayoutPanel panel={{ key: 'left', placement: Placement.Left }}>
+    <Text>Left panel content</Text>
+  </LayoutPanel>
+  <LayoutBorder onDragging={setIsDragging} />
+  <LayoutPanel panel={{ key: 'center', placement: Placement.Center }}>
+    <Text>Center panel content</Text>
+  </LayoutPanel>
+</LayoutGroup>
+```
+
+**When to use:**
+- Multi-panel layouts (sidebar + main content)
+- Resizable sections
+- Collapsible panels
+- Complex application layouts
+
+See @src/UNIFORM_GUIDE.md for detailed layout system documentation and examples.
 
 ## Detailed Documentation
 
