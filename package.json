@@ -1,5 +1,5 @@
 {
-  "name": "ux-primer",
+  "name": "ux-prototypes",
   "version": "1.0.0",
   "type": "module",
   "description": "A starter template for designers to build prototypes with React and Hudl Uniform",
@@ -9,9 +9,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@hudl/performance-core-layout": "^0.1.0",
+    "@hudl/uniform-web": "latest",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "@hudl/uniform-web": "latest"
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@types/react": "^18.3.5",
