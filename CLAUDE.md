@@ -1,4 +1,24 @@
-# Project Instructions
+# UX Prototypes Repository
+
+This is a prototyping template repository. Each prototype lives on its own git branch.
+
+## Workflow
+
+**Starting a new prototype:**
+```
+/new-prototype
+```
+This will create a new git branch, install dependencies, and start the dev server.
+
+**Saving your prototype:**
+```
+/save-prototype
+```
+This will commit your changes and push the branch to GitHub.
+
+**The main branch** contains the clean template. All prototypes branch from main and stay on separate branches so you can easily switch between them or archive old work.
+
+---
 
 ## Code Style - Uniform Design System
 
