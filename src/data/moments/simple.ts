@@ -1,4 +1,4 @@
-import type { GameEvent } from './types'
+import type { GameEvent } from '../types'
 
 export const events: GameEvent[] = [
   // Game MBL-001: Lincoln Lions vs Riverside Rockets

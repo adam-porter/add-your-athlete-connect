@@ -19,20 +19,32 @@
 export * from './types'
 
 // Data collections
-export { sports } from './sports'
-export { teams } from './teams'
-export { athletes } from './athletes'
-export { competitions } from './competitions'
-export { games } from './games'
-export { events } from './events'
+export { sports } from './entities/sports'
+export { teams } from './entities/teams'
+export { athletes } from './entities/athletes'
+export { competitions } from './entities/competitions'
+export { games } from './entities/games'
+export { events } from './moments/simple'
+
+// Segmented moment data (JSON files)
+export { default as basketballSegmented } from './moments/basketball_segmented.json'
+export { default as footballSegmented } from './moments/football_segmented.json'
+export { default as iceHockeySegmented } from './moments/ice-hockey_segmented.json'
+export { default as soccerSegmented } from './moments/soccer_segmented.json'
+export { default as volleyballSegmented } from './moments/volleyball_segmented.json'
 
 // Import for internal use
-import { sports } from './sports'
-import { teams } from './teams'
-import { athletes } from './athletes'
-import { competitions } from './competitions'
-import { games } from './games'
-import { events } from './events'
+import { sports } from './entities/sports'
+import { teams } from './entities/teams'
+import { athletes } from './entities/athletes'
+import { competitions } from './entities/competitions'
+import { games } from './entities/games'
+import { events } from './moments/simple'
+import basketballSegmented from './moments/basketball_segmented.json'
+import footballSegmented from './moments/football_segmented.json'
+import iceHockeySegmented from './moments/ice-hockey_segmented.json'
+import soccerSegmented from './moments/soccer_segmented.json'
+import volleyballSegmented from './moments/volleyball_segmented.json'
 import type { SeedData, Sport, Team, Athlete, Competition, Game, GameEvent } from './types'
 
 /**
@@ -45,6 +57,17 @@ export const seedData: SeedData = {
   competitions,
   games,
   events,
+}
+
+/**
+ * Segmented moment data by sport
+ */
+export const segmentedMoments = {
+  basketball: basketballSegmented,
+  football: footballSegmented,
+  iceHockey: iceHockeySegmented,
+  soccer: soccerSegmented,
+  volleyball: volleyballSegmented,
 }
 
 // ============================================================================

@@ -1,4 +1,4 @@
-import type { Sport } from './types'
+import type { Sport } from '../types'
 
 export const sports: Sport[] = [
   {
