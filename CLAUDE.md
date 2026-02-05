@@ -80,6 +80,47 @@ import { LayoutGroup, LayoutPanel, LayoutBorder, Placement } from '@hudl/perform
 
 See @src/UNIFORM_GUIDE.md for detailed layout system documentation and examples.
 
+## Seed Data
+
+**IMPORTANT: Use the structured seed data in `src/data/` instead of hardcoding data inline.**
+
+The template includes sample data for common sports domains:
+- `sports` - Sport types (basketball, football, soccer, volleyball, lacrosse)
+- `teams` - Teams with colors, logos, and sport associations
+- `athletes` - Players with positions, jersey numbers, and team membership
+- `competitions` - Leagues and tournaments
+- `games` - Matches with scores and status
+- `events` - In-game events (highlights, goals, fouls, etc.)
+
+### Usage
+
+```typescript
+// Import data directly
+import { teams, athletes, games } from './data'
+
+// Use helper functions
+import { getTeamsBySport, getAthletesByTeam, getGamesByTeam } from './data'
+
+// Get basketball teams
+const basketballTeams = getTeamsBySport('sport-basketball')
+
+// Get a team's roster
+const roster = getAthletesByTeam('team-lincoln-lions')
+```
+
+### Extending Data
+
+When building prototypes, extend the existing data rather than creating new inline data:
+
+```typescript
+import { teams, type Team } from './data'
+
+const myTeams: Team[] = [
+  ...teams,
+  { id: 'team-new', name: 'New Team', /* ... */ },
+]
+```
+
 ## Detailed Documentation
 
 See @src/UNIFORM_GUIDE.md for complete component reference and all CSS variables.

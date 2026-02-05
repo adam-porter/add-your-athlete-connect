@@ -1,0 +1,111 @@
+import type { Team } from './types'
+
+export const teams: Team[] = [
+  // Basketball teams
+  {
+    id: 'team-lincoln-lions',
+    name: 'Lincoln Lions',
+    abbreviation: 'LIN',
+    sportId: 'sport-basketball',
+    city: 'Lincoln',
+    primaryColor: '#C41E3A',
+    secondaryColor: '#FFD700',
+    logoUrl: 'https://placehold.co/100x100/C41E3A/FFFFFF?text=LL',
+  },
+  {
+    id: 'team-riverside-rockets',
+    name: 'Riverside Rockets',
+    abbreviation: 'RIV',
+    sportId: 'sport-basketball',
+    city: 'Riverside',
+    primaryColor: '#1E4D8C',
+    secondaryColor: '#FFFFFF',
+    logoUrl: 'https://placehold.co/100x100/1E4D8C/FFFFFF?text=RR',
+  },
+  {
+    id: 'team-eastwood-eagles',
+    name: 'Eastwood Eagles',
+    abbreviation: 'EWD',
+    sportId: 'sport-basketball',
+    city: 'Eastwood',
+    primaryColor: '#2E8B57',
+    secondaryColor: '#FFFFFF',
+    logoUrl: 'https://placehold.co/100x100/2E8B57/FFFFFF?text=EE',
+  },
+  {
+    id: 'team-westfield-wolves',
+    name: 'Westfield Wolves',
+    abbreviation: 'WFD',
+    sportId: 'sport-basketball',
+    city: 'Westfield',
+    primaryColor: '#4B0082',
+    secondaryColor: '#C0C0C0',
+    logoUrl: 'https://placehold.co/100x100/4B0082/FFFFFF?text=WW',
+  },
+
+  // Football teams
+  {
+    id: 'team-northside-knights',
+    name: 'Northside Knights',
+    abbreviation: 'NSK',
+    sportId: 'sport-football',
+    city: 'Northside',
+    primaryColor: '#000080',
+    secondaryColor: '#FFD700',
+    logoUrl: 'https://placehold.co/100x100/000080/FFFFFF?text=NK',
+  },
+  {
+    id: 'team-southport-stallions',
+    name: 'Southport Stallions',
+    abbreviation: 'SPS',
+    sportId: 'sport-football',
+    city: 'Southport',
+    primaryColor: '#8B0000',
+    secondaryColor: '#FFFFFF',
+    logoUrl: 'https://placehold.co/100x100/8B0000/FFFFFF?text=SS',
+  },
+
+  // Soccer teams
+  {
+    id: 'team-metro-fc',
+    name: 'Metro FC',
+    abbreviation: 'MFC',
+    sportId: 'sport-soccer',
+    city: 'Metro City',
+    primaryColor: '#FF4500',
+    secondaryColor: '#000000',
+    logoUrl: 'https://placehold.co/100x100/FF4500/FFFFFF?text=MFC',
+  },
+  {
+    id: 'team-united-city',
+    name: 'United City',
+    abbreviation: 'UTC',
+    sportId: 'sport-soccer',
+    city: 'United City',
+    primaryColor: '#228B22',
+    secondaryColor: '#FFFFFF',
+    logoUrl: 'https://placehold.co/100x100/228B22/FFFFFF?text=UC',
+  },
+
+  // Volleyball teams
+  {
+    id: 'team-coastal-wave',
+    name: 'Coastal Wave',
+    abbreviation: 'CW',
+    sportId: 'sport-volleyball',
+    city: 'Coastal',
+    primaryColor: '#00CED1',
+    secondaryColor: '#FFFFFF',
+    logoUrl: 'https://placehold.co/100x100/00CED1/FFFFFF?text=CW',
+  },
+  {
+    id: 'team-valley-thunder',
+    name: 'Valley Thunder',
+    abbreviation: 'VT',
+    sportId: 'sport-volleyball',
+    city: 'Valley',
+    primaryColor: '#FF6347',
+    secondaryColor: '#2F4F4F',
+    logoUrl: 'https://placehold.co/100x100/FF6347/FFFFFF?text=VT',
+  },
+]
