@@ -22,6 +22,73 @@ ux-primer/
 - **Create new components** - Ask Claude or create `.tsx` files in `src/`
 - **Organize as you grow** - Create folders like `src/components/`, `src/pages/`, etc.
 
+## Using Seed Data
+
+The template includes structured sample data in `src/data/` for common sports domains. This data is designed to be extended as your prototype grows.
+
+### Quick Start
+
+```typescript
+// Import specific data
+import { teams, athletes, games } from './data'
+
+// Import everything
+import { seedData } from './data'
+
+// Use helper functions to query related data
+import { getTeamsBySport, getAthletesByTeam, getGamesByTeam } from './data'
+```
+
+### Available Data
+
+| Entity | Description | Example Fields |
+|--------|-------------|----------------|
+| `sports` | Sport types | name, abbreviation, icon |
+| `teams` | Teams with colors/logos | name, city, sportId, primaryColor |
+| `athletes` | Players with positions | firstName, lastName, teamId, position |
+| `competitions` | Leagues and tournaments | name, season, teamIds |
+| `games` | Matches between teams | homeTeamId, awayTeamId, score, status |
+| `events` | In-game events | gameId, type, description, athleteId |
+
+### Helper Functions
+
+```typescript
+// Get all basketball teams
+const basketballTeams = getTeamsBySport('sport-basketball')
+
+// Get athletes on a specific team
+const roster = getAthletesByTeam('team-lincoln-lions')
+
+// Get all games for a team
+const schedule = getGamesByTeam('team-lincoln-lions')
+
+// Get events from a game
+const highlights = getEventsByGame('game-mbl-001')
+```
+
+### Extending the Data
+
+Add your own entries following the existing patterns:
+
+```typescript
+// In your component, extend the data
+import { teams, type Team } from './data'
+
+const myTeams: Team[] = [
+  ...teams,
+  {
+    id: 'team-my-new-team',
+    name: 'My New Team',
+    abbreviation: 'MNT',
+    sportId: 'sport-basketball',
+    city: 'Hometown',
+    primaryColor: '#FF0000',
+    secondaryColor: '#FFFFFF',
+    logoUrl: 'https://placehold.co/100x100/FF0000/FFFFFF?text=MNT',
+  },
+]
+```
+
 ## Using Uniform Components
 
 The Hudl Uniform design system (`@hudl/uniform-web`) is already installed.

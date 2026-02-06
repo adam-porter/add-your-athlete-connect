@@ -1,0 +1,5069 @@
+{
+  "breakdown": {
+    "id": "697a0d5bdf690ea4d0981992",
+    "teamId": "44881",
+    "eventId": "69796809d7673622d068d0f4",
+    "view": {
+      "id": "697a0d5b2647b350d50c0045",
+      "subViews": [],
+      "attributes": []
+    },
+    "dataSource": {
+      "isValid": true,
+      "feedType": "HudlTagging",
+      "importParameters": {
+        "userId": "1822936",
+        "importDate": "2026-01-28T13:21:31.233"
+      },
+      "isDeleted": false
+    },
+    "taggingSession": {
+      "previousSessionId": "6979e12733310d219b32b7d2",
+      "userId": "1822936",
+      "user": {
+        "userId": "1822936",
+        "firstName": "Jack",
+        "lastName": "Andringa"
+      },
+      "type": 3,
+      "createdOffline": false,
+      "dateCreated": "2026-01-28T13:21:31.233Z",
+      "dateUpdated": "2026-01-28T13:21:31.865Z",
+      "isFinalized": true,
+      "teams": {
+        "1": "44881",
+        "2": "255161"
+      },
+      "isSyncedToVideo": true,
+      "status": 3
+    },
+    "segments": {
+      "segmentType": "sequence",
+      "description": "A sequence represents continuous play between stoppages (faceoffs, penalties, goals)",
+      "sequences": [
+        {
+          "sequenceId": 1,
+          "controllingTeam": "1",
+          "zone": "neutral",
+          "startTimeMs": 4040,
+          "endTimeMs": 83993,
+          "outcome": "stoppage",
+          "actions": [
+            {
+              "markId": "697a0d5bdf690ea4d0981994",
+              "startTimeMs": 4040,
+              "endTimeMs": 11033,
+              "markTimeMs": 0,
+              "type": "Unknown",
+              "isHome": false,
+              "isTeam1": false,
+              "name": "Unknown",
+              "attributes": [
+                {
+                  "key": "source",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                },
+                {
+                  "key": "type",
+                  "values": [
+                    "faceOff"
+                  ]
+                },
+                {
+                  "key": "result",
+                  "values": [
+                    "won"
+                  ]
+                },
+                {
+                  "key": "team",
+                  "values": [
+                    "2"
+                  ]
+                },
+                {
+                  "key": "originalStartTimeMs",
+                  "values": [
+                    "5183"
+                  ]
+                },
+                {
+                  "key": "originalEndTimeMs",
+                  "values": [
+                    "5033"
+                  ]
+                },
+                {
+                  "key": "zone",
+                  "values": [
+                    "neutral"
+                  ]
+                },
+                {
+                  "key": "matchedStartTimeMs",
+                  "values": [
+                    "5183"
+                  ]
+                },
+                {
+                  "key": "playerUserIdTeam1",
+                  "values": [
+                    "17798210"
+                  ]
+                },
+                {
+                  "key": "playerJerseyTeam2",
+                  "values": [
+                    "3"
+                  ]
+                },
+                {
+                  "key": "lastModified",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                }
+              ]
+            },
+            {
+              "markId": "697a0d5bdf690ea4d0981996",
+              "startTimeMs": 56876,
+              "endTimeMs": 66876,
+              "markTimeMs": 0,
+              "type": "Unknown",
+              "isHome": false,
+              "isTeam1": false,
+              "name": "Unknown",
+              "attributes": [
+                {
+                  "key": "source",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                },
+                {
+                  "key": "type",
+                  "values": [
+                    "shot"
+                  ]
+                },
+                {
+                  "key": "result",
+                  "values": [
+                    "saved"
+                  ]
+                },
+                {
+                  "key": "team",
+                  "values": [
+                    "1"
+                  ]
+                },
+                {
+                  "key": "originalStartTimeMs",
+                  "values": [
+                    "62876"
+                  ]
+                },
+                {
+                  "key": "playerUserId",
+                  "values": [
+                    "18390495"
+                  ]
+                },
+                {
+                  "key": "startLocationX",
+                  "values": [
+                    "-0.3925925925925926"
+                  ]
+                },
+                {
+                  "key": "startLocationY",
+                  "values": [
+                    "0.7478260869565218"
+                  ]
+                },
+                {
+                  "key": "playerJerseyTeam2",
+                  "values": [
+                    "35"
+                  ]
+                },
+                {
+                  "key": "lastModified",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                }
+              ]
+            },
+            {
+              "markId": "697a0d5bdf690ea4d0981997",
+              "startTimeMs": 81376,
+              "endTimeMs": 89376,
+              "markTimeMs": 0,
+              "type": "Unknown",
+              "isHome": false,
+              "isTeam1": false,
+              "name": "Unknown",
+              "attributes": [
+                {
+                  "key": "source",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                },
+                {
+                  "key": "type",
+                  "values": [
+                    "outOfPlay"
+                  ]
+                },
+                {
+                  "key": "originalStartTimeMs",
+                  "values": [
+                    "85376"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "sequenceId": 2,
+          "controllingTeam": "1",
+          "zone": "offensive",
+          "startTimeMs": 83993,
+          "endTimeMs": 98738,
+          "outcome": "stoppage",
+          "actions": [
+            {
+              "markId": "697a0d5bdf690ea4d0981998",
+              "startTimeMs": 83993,
+              "endTimeMs": 97567,
+              "markTimeMs": 0,
+              "type": "Unknown",
+              "isHome": false,
+              "isTeam1": false,
+              "name": "Unknown",
+              "attributes": [
+                {
+                  "key": "source",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                },
+                {
+                  "key": "type",
+                  "values": [
+                    "faceOff"
+                  ]
+                },
+                {
+                  "key": "result",
+                  "values": [
+                    "won"
+                  ]
+                },
+                {
+                  "key": "team",
+                  "values": [
+                    "1"
+                  ]
+                },
+                {
+                  "key": "originalStartTimeMs",
+                  "values": [
+                    "89993"
+                  ]
+                },
+                {
+                  "key": "originalEndTimeMs",
+                  "values": [
+                    "91567"
+                  ]
+                },
+                {
+                  "key": "zone",
+                  "values": [
+                    "offensive"
+                  ]
+                },
+                {
+                  "key": "playerUserIdTeam1",
+                  "values": [
+                    "19287022"
+                  ]
+                },
+                {
+                  "key": "playerUserIdTeam2",
+                  "values": [
+                    "18832519"
+                  ]
+                }
+              ]
+            },
+            {
+              "markId": "697a0d5bdf690ea4d0981999",
+              "startTimeMs": 97055,
+              "endTimeMs": 105055,
+              "markTimeMs": 0,
+              "type": "Unknown",
+              "isHome": false,
+              "isTeam1": false,
+              "name": "Unknown",
+              "attributes": [
+                {
+                  "key": "source",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                },
+                {
+                  "key": "type",
+                  "values": [
+                    "infraction"
+                  ]
+                },
+                {
+                  "key": "subType",
+                  "values": [
+                    "offsides"
+                  ]
+                },
+                {
+                  "key": "team",
+                  "values": [
+                    "2"
+                  ]
+                },
+                {
+                  "key": "originalStartTimeMs",
+                  "values": [
+                    "101055"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "sequenceId": 3,
+          "controllingTeam": "2",
+          "zone": "neutral",
+          "startTimeMs": 98738,
+          "endTimeMs": 250386,
+          "outcome": "stoppage",
+          "actions": [
+            {
+              "markId": "697a0d5bdf690ea4d098199a",
+              "startTimeMs": 98738,
+              "endTimeMs": 111701,
+              "markTimeMs": 0,
+              "type": "Unknown",
+              "isHome": false,
+              "isTeam1": false,
+              "name": "Unknown",
+              "attributes": [
+                {
+                  "key": "source",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                },
+                {
+                  "key": "type",
+                  "values": [
+                    "faceOff"
+                  ]
+                },
+                {
+                  "key": "result",
+                  "values": [
+                    "won"
+                  ]
+                },
+                {
+                  "key": "team",
+                  "values": [
+                    "1"
+                  ]
+                },
+                {
+                  "key": "originalStartTimeMs",
+                  "values": [
+                    "104738"
+                  ]
+                },
+                {
+                  "key": "originalEndTimeMs",
+                  "values": [
+                    "105701"
+                  ]
+                },
+                {
+                  "key": "zone",
+                  "values": [
+                    "neutral"
+                  ]
+                },
+                {
+                  "key": "playerUserIdTeam1",
+                  "values": [
+                    "19287022"
+                  ]
+                },
+                {
+                  "key": "playerUserIdTeam2",
+                  "values": [
+                    "18832519"
+                  ]
+                }
+              ]
+            },
+            {
+              "markId": "697a0d5bdf690ea4d098199b",
+              "startTimeMs": 115641,
+              "endTimeMs": 125641,
+              "markTimeMs": 0,
+              "type": "Unknown",
+              "isHome": false,
+              "isTeam1": false,
+              "name": "Unknown",
+              "attributes": [
+                {
+                  "key": "source",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                },
+                {
+                  "key": "type",
+                  "values": [
+                    "shot"
+                  ]
+                },
+                {
+                  "key": "result",
+                  "values": [
+                    "missed"
+                  ]
+                },
+                {
+                  "key": "team",
+                  "values": [
+                    "1"
+                  ]
+                },
+                {
+                  "key": "originalStartTimeMs",
+                  "values": [
+                    "121641"
+                  ]
+                },
+                {
+                  "key": "playerUserId",
+                  "values": [
+                    "19287022"
+                  ]
+                },
+                {
+                  "key": "startLocationX",
+                  "values": [
+                    "0.288888888888889"
+                  ]
+                },
+                {
+                  "key": "startLocationY",
+                  "values": [
+                    "0.6927536231884057"
+                  ]
+                }
+              ]
+            },
+            {
+              "markId": "697a0d5bdf690ea4d098199c",
+              "startTimeMs": 120429,
+              "endTimeMs": 130429,
+              "markTimeMs": 0,
+              "type": "Unknown",
+              "isHome": false,
+              "isTeam1": false,
+              "name": "Unknown",
+              "attributes": [
+                {
+                  "key": "source",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                },
+                {
+                  "key": "type",
+                  "values": [
+                    "shot"
+                  ]
+                },
+                {
+                  "key": "result",
+                  "values": [
+                    "missed"
+                  ]
+                },
+                {
+                  "key": "team",
+                  "values": [
+                    "1"
+                  ]
+                },
+                {
+                  "key": "originalStartTimeMs",
+                  "values": [
+                    "126429"
+                  ]
+                },
+                {
+                  "key": "playerUserId",
+                  "values": [
+                    "28791479"
+                  ]
+                },
+                {
+                  "key": "startLocationX",
+                  "values": [
+                    "0.18518518518518512"
+                  ]
+                },
+                {
+                  "key": "startLocationY",
+                  "values": [
+                    "0.808695652173913"
+                  ]
+                }
+              ]
+            },
+            {
+              "markId": "697a0d5bdf690ea4d098199d",
+              "startTimeMs": 124929,
+              "endTimeMs": 134929,
+              "markTimeMs": 0,
+              "type": "Unknown",
+              "isHome": false,
+              "isTeam1": false,
+              "name": "Unknown",
+              "attributes": [
+                {
+                  "key": "source",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                },
+                {
+                  "key": "type",
+                  "values": [
+                    "shot"
+                  ]
+                },
+                {
+                  "key": "result",
+                  "values": [
+                    "missed"
+                  ]
+                },
+                {
+                  "key": "team",
+                  "values": [
+                    "1"
+                  ]
+                },
+                {
+                  "key": "originalStartTimeMs",
+                  "values": [
+                    "130929"
+                  ]
+                },
+                {
+                  "key": "playerUserId",
+                  "values": [
+                    "20379463"
+                  ]
+                },
+                {
+                  "key": "startLocationX",
+                  "values": [
+                    "-0.437037037037037"
+                  ]
+                },
+                {
+                  "key": "startLocationY",
+                  "values": [
+                    "0.3913043478260869"
+                  ]
+                }
+              ]
+            },
+            {
+              "markId": "697a0d5bdf690ea4d098199e",
+              "startTimeMs": 148119,
+              "endTimeMs": 158119,
+              "markTimeMs": 0,
+              "type": "Unknown",
+              "isHome": false,
+              "isTeam1": false,
+              "name": "Unknown",
+              "attributes": [
+                {
+                  "key": "source",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                },
+                {
+                  "key": "type",
+                  "values": [
+                    "shot"
+                  ]
+                },
+                {
+                  "key": "result",
+                  "values": [
+                    "saved"
+                  ]
+                },
+                {
+                  "key": "team",
+                  "values": [
+                    "2"
+                  ]
+                },
+                {
+                  "key": "originalStartTimeMs",
+                  "values": [
+                    "154119"
+                  ]
+                },
+                {
+                  "key": "playerJersey",
+                  "values": [
+                    "16"
+                  ]
+                },
+                {
+                  "key": "startLocationX",
+                  "values": [
+                    "0.48888888888888893"
+                  ]
+                },
+                {
+                  "key": "startLocationY",
+                  "values": [
+                    "0.6144927536231883"
+                  ]
+                },
+                {
+                  "key": "playerUserIdTeam1",
+                  "values": [
+                    "28791083"
+                  ]
+                },
+                {
+                  "key": "lastModified",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                }
+              ]
+            },
+            {
+              "markId": "697a0d5bdf690ea4d098199f",
+              "startTimeMs": 173981,
+              "endTimeMs": 183981,
+              "markTimeMs": 0,
+              "type": "Unknown",
+              "isHome": false,
+              "isTeam1": false,
+              "name": "Unknown",
+              "attributes": [
+                {
+                  "key": "source",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                },
+                {
+                  "key": "type",
+                  "values": [
+                    "shot"
+                  ]
+                },
+                {
+                  "key": "result",
+                  "values": [
+                    "blocked"
+                  ]
+                },
+                {
+                  "key": "team",
+                  "values": [
+                    "2"
+                  ]
+                },
+                {
+                  "key": "originalStartTimeMs",
+                  "values": [
+                    "179981"
+                  ]
+                },
+                {
+                  "key": "playerUserId",
+                  "values": [
+                    "17559210"
+                  ]
+                },
+                {
+                  "key": "playerUserIdTeam1",
+                  "values": [
+                    "28791187"
+                  ]
+                },
+                {
+                  "key": "startLocationX",
+                  "values": [
+                    "0.45185185185185195"
+                  ]
+                },
+                {
+                  "key": "startLocationY",
+                  "values": [
+                    "0.5101449275362319"
+                  ]
+                }
+              ]
+            },
+            {
+              "markId": "697a0d5bdf690ea4d09819a0",
+              "startTimeMs": 191210,
+              "endTimeMs": 201210,
+              "markTimeMs": 0,
+              "type": "Unknown",
+              "isHome": false,
+              "isTeam1": false,
+              "name": "Unknown",
+              "attributes": [
+                {
+                  "key": "source",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                },
+                {
+                  "key": "type",
+                  "values": [
+                    "shot"
+                  ]
+                },
+                {
+                  "key": "result",
+                  "values": [
+                    "saved"
+                  ]
+                },
+                {
+                  "key": "team",
+                  "values": [
+                    "2"
+                  ]
+                },
+                {
+                  "key": "originalStartTimeMs",
+                  "values": [
+                    "197210"
+                  ]
+                },
+                {
+                  "key": "playerUserIdTeam1",
+                  "values": [
+                    "28791083"
+                  ]
+                },
+                {
+                  "key": "playerJersey",
+                  "values": [
+                    "3"
+                  ]
+                },
+                {
+                  "key": "startLocationX",
+                  "values": [
+                    "0.6296296296296295"
+                  ]
+                },
+                {
+                  "key": "startLocationY",
+                  "values": [
+                    "0.6289855072463768"
+                  ]
+                }
+              ]
+            },
+            {
+              "markId": "697a0d5bdf690ea4d09819a1",
+              "startTimeMs": 244293,
+              "endTimeMs": 252293,
+              "markTimeMs": 0,
+              "type": "Unknown",
+              "isHome": false,
+              "isTeam1": false,
+              "name": "Unknown",
+              "attributes": [
+                {
+                  "key": "source",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                },
+                {
+                  "key": "type",
+                  "values": [
+                    "infraction"
+                  ]
+                },
+                {
+                  "key": "subType",
+                  "values": [
+                    "icing"
+                  ]
+                },
+                {
+                  "key": "team",
+                  "values": [
+                    "2"
+                  ]
+                },
+                {
+                  "key": "originalStartTimeMs",
+                  "values": [
+                    "248293"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "sequenceId": 4,
+          "controllingTeam": "2",
+          "zone": "defensive",
+          "startTimeMs": 250386,
+          "endTimeMs": 279903,
+          "outcome": "stoppage",
+          "actions": [
+            {
+              "markId": "697a0d5bdf690ea4d09819a2",
+              "startTimeMs": 250386,
+              "endTimeMs": 263574,
+              "markTimeMs": 0,
+              "type": "Unknown",
+              "isHome": false,
+              "isTeam1": false,
+              "name": "Unknown",
+              "attributes": [
+                {
+                  "key": "source",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                },
+                {
+                  "key": "type",
+                  "values": [
+                    "faceOff"
+                  ]
+                },
+                {
+                  "key": "result",
+                  "values": [
+                    "won"
+                  ]
+                },
+                {
+                  "key": "team",
+                  "values": [
+                    "2"
+                  ]
+                },
+                {
+                  "key": "originalStartTimeMs",
+                  "values": [
+                    "256386"
+                  ]
+                },
+                {
+                  "key": "originalEndTimeMs",
+                  "values": [
+                    "257574"
+                  ]
+                },
+                {
+                  "key": "zone",
+                  "values": [
+                    "defensive"
+                  ]
+                },
+                {
+                  "key": "playerUserIdTeam2",
+                  "values": [
+                    "18832519"
+                  ]
+                },
+                {
+                  "key": "playerUserIdTeam1",
+                  "values": [
+                    "19287022"
+                  ]
+                }
+              ]
+            },
+            {
+              "markId": "697a0d5bdf690ea4d09819a3",
+              "startTimeMs": 277154,
+              "endTimeMs": 285154,
+              "markTimeMs": 0,
+              "type": "Unknown",
+              "isHome": false,
+              "isTeam1": false,
+              "name": "Unknown",
+              "attributes": [
+                {
+                  "key": "source",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                },
+                {
+                  "key": "type",
+                  "values": [
+                    "infraction"
+                  ]
+                },
+                {
+                  "key": "subType",
+                  "values": [
+                    "offsides"
+                  ]
+                },
+                {
+                  "key": "team",
+                  "values": [
+                    "2"
+                  ]
+                },
+                {
+                  "key": "originalStartTimeMs",
+                  "values": [
+                    "281154"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "sequenceId": 5,
+          "controllingTeam": "2",
+          "zone": "neutral",
+          "startTimeMs": 279903,
+          "endTimeMs": 298265,
+          "outcome": "stoppage",
+          "actions": [
+            {
+              "markId": "697a0d5bdf690ea4d09819a4",
+              "startTimeMs": 279903,
+              "endTimeMs": 292813,
+              "markTimeMs": 0,
+              "type": "Unknown",
+              "isHome": false,
+              "isTeam1": false,
+              "name": "Unknown",
+              "attributes": [
+                {
+                  "key": "source",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                },
+                {
+                  "key": "type",
+                  "values": [
+                    "faceOff"
+                  ]
+                },
+                {
+                  "key": "result",
+                  "values": [
+                    "won"
+                  ]
+                },
+                {
+                  "key": "team",
+                  "values": [
+                    "2"
+                  ]
+                },
+                {
+                  "key": "originalStartTimeMs",
+                  "values": [
+                    "285903"
+                  ]
+                },
+                {
+                  "key": "originalEndTimeMs",
+                  "values": [
+                    "286813"
+                  ]
+                },
+                {
+                  "key": "zone",
+                  "values": [
+                    "neutral"
+                  ]
+                },
+                {
+                  "key": "playerUserIdTeam2",
+                  "values": [
+                    "18832519"
+                  ]
+                },
+                {
+                  "key": "playerUserIdTeam1",
+                  "values": [
+                    "19287022"
+                  ]
+                }
+              ]
+            },
+            {
+              "markId": "697a0d5bdf690ea4d09819a5",
+              "startTimeMs": 295675,
+              "endTimeMs": 303675,
+              "markTimeMs": 0,
+              "type": "Unknown",
+              "isHome": false,
+              "isTeam1": false,
+              "name": "Unknown",
+              "attributes": [
+                {
+                  "key": "source",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                },
+                {
+                  "key": "type",
+                  "values": [
+                    "infraction"
+                  ]
+                },
+                {
+                  "key": "subType",
+                  "values": [
+                    "icing"
+                  ]
+                },
+                {
+                  "key": "team",
+                  "values": [
+                    "1"
+                  ]
+                },
+                {
+                  "key": "originalStartTimeMs",
+                  "values": [
+                    "299675"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "sequenceId": 6,
+          "controllingTeam": "2",
+          "zone": "offensive",
+          "startTimeMs": 298265,
+          "endTimeMs": 433359,
+          "outcome": "stoppage",
+          "actions": [
+            {
+              "markId": "697a0d5bdf690ea4d09819a6",
+              "startTimeMs": 298265,
+              "endTimeMs": 315960,
+              "markTimeMs": 0,
+              "type": "Unknown",
+              "isHome": false,
+              "isTeam1": false,
+              "name": "Unknown",
+              "attributes": [
+                {
+                  "key": "source",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                },
+                {
+                  "key": "type",
+                  "values": [
+                    "faceOff"
+                  ]
+                },
+                {
+                  "key": "result",
+                  "values": [
+                    "won"
+                  ]
+                },
+                {
+                  "key": "team",
+                  "values": [
+                    "2"
+                  ]
+                },
+                {
+                  "key": "originalStartTimeMs",
+                  "values": [
+                    "304265"
+                  ]
+                },
+                {
+                  "key": "originalEndTimeMs",
+                  "values": [
+                    "309960"
+                  ]
+                },
+                {
+                  "key": "zone",
+                  "values": [
+                    "offensive"
+                  ]
+                },
+                {
+                  "key": "playerUserIdTeam2",
+                  "values": [
+                    "21488635"
+                  ]
+                },
+                {
+                  "key": "playerUserIdTeam1",
+                  "values": [
+                    "19287022"
+                  ]
+                }
+              ]
+            },
+            {
+              "markId": "697a0d5bdf690ea4d09819a7",
+              "startTimeMs": 311836,
+              "endTimeMs": 321836,
+              "markTimeMs": 0,
+              "type": "Unknown",
+              "isHome": false,
+              "isTeam1": false,
+              "name": "Unknown",
+              "attributes": [
+                {
+                  "key": "source",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                },
+                {
+                  "key": "type",
+                  "values": [
+                    "shot"
+                  ]
+                },
+                {
+                  "key": "result",
+                  "values": [
+                    "saved"
+                  ]
+                },
+                {
+                  "key": "team",
+                  "values": [
+                    "2"
+                  ]
+                },
+                {
+                  "key": "originalStartTimeMs",
+                  "values": [
+                    "317836"
+                  ]
+                },
+                {
+                  "key": "playerUserIdTeam1",
+                  "values": [
+                    "28791083"
+                  ]
+                },
+                {
+                  "key": "playerJersey",
+                  "values": [
+                    "16"
+                  ]
+                },
+                {
+                  "key": "startLocationX",
+                  "values": [
+                    "0.6074074074074074"
+                  ]
+                },
+                {
+                  "key": "startLocationY",
+                  "values": [
+                    "0.7014492753623188"
+                  ]
+                }
+              ]
+            },
+            {
+              "markId": "697a0d5bdf690ea4d09819a8",
+              "startTimeMs": 382082,
+              "endTimeMs": 392082,
+              "markTimeMs": 0,
+              "type": "Unknown",
+              "isHome": false,
+              "isTeam1": false,
+              "name": "Unknown",
+              "attributes": [
+                {
+                  "key": "source",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                },
+                {
+                  "key": "type",
+                  "values": [
+                    "shot"
+                  ]
+                },
+                {
+                  "key": "result",
+                  "values": [
+                    "blocked"
+                  ]
+                },
+                {
+                  "key": "team",
+                  "values": [
+                    "1"
+                  ]
+                },
+                {
+                  "key": "originalStartTimeMs",
+                  "values": [
+                    "388082"
+                  ]
+                },
+                {
+                  "key": "playerUserId",
+                  "values": [
+                    "28791022"
+                  ]
+                },
+                {
+                  "key": "playerUserIdTeam2",
+                  "values": [
+                    "17559210"
+                  ]
+                },
+                {
+                  "key": "startLocationX",
+                  "values": [
+                    "0.08148148148148149"
+                  ]
+                },
+                {
+                  "key": "startLocationY",
+                  "values": [
+                    "0.8028985507246377"
+                  ]
+                }
+              ]
+            },
+            {
+              "markId": "697a0d5bdf690ea4d09819a9",
+              "startTimeMs": 382972,
+              "endTimeMs": 392972,
+              "markTimeMs": 0,
+              "type": "Unknown",
+              "isHome": false,
+              "isTeam1": false,
+              "name": "Unknown",
+              "attributes": [
+                {
+                  "key": "source",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                },
+                {
+                  "key": "type",
+                  "values": [
+                    "shot"
+                  ]
+                },
+                {
+                  "key": "result",
+                  "values": [
+                    "missed"
+                  ]
+                },
+                {
+                  "key": "team",
+                  "values": [
+                    "1"
+                  ]
+                },
+                {
+                  "key": "originalStartTimeMs",
+                  "values": [
+                    "388972"
+                  ]
+                },
+                {
+                  "key": "playerUserId",
+                  "values": [
+                    "28791022"
+                  ]
+                },
+                {
+                  "key": "startLocationX",
+                  "values": [
+                    "0.029629629629629672"
+                  ]
+                },
+                {
+                  "key": "startLocationY",
+                  "values": [
+                    "0.8057971014492753"
+                  ]
+                }
+              ]
+            },
+            {
+              "markId": "697a0d5bdf690ea4d09819aa",
+              "startTimeMs": 424669,
+              "endTimeMs": 434669,
+              "markTimeMs": 0,
+              "type": "Unknown",
+              "isHome": false,
+              "isTeam1": false,
+              "name": "Unknown",
+              "attributes": [
+                {
+                  "key": "source",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                },
+                {
+                  "key": "type",
+                  "values": [
+                    "shot"
+                  ]
+                },
+                {
+                  "key": "result",
+                  "values": [
+                    "saved"
+                  ]
+                },
+                {
+                  "key": "team",
+                  "values": [
+                    "2"
+                  ]
+                },
+                {
+                  "key": "originalStartTimeMs",
+                  "values": [
+                    "430669"
+                  ]
+                },
+                {
+                  "key": "playerUserIdTeam1",
+                  "values": [
+                    "28791083"
+                  ]
+                },
+                {
+                  "key": "playerUserId",
+                  "values": [
+                    "18967326"
+                  ]
+                },
+                {
+                  "key": "startLocationX",
+                  "values": [
+                    "-0.3555555555555555"
+                  ]
+                },
+                {
+                  "key": "startLocationY",
+                  "values": [
+                    "0.6463768115942029"
+                  ]
+                }
+              ]
+            },
+            {
+              "markId": "697a0d5bdf690ea4d09819ab",
+              "startTimeMs": 430861,
+              "endTimeMs": 438861,
+              "markTimeMs": 0,
+              "type": "Unknown",
+              "isHome": false,
+              "isTeam1": false,
+              "name": "Unknown",
+              "attributes": [
+                {
+                  "key": "source",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                },
+                {
+                  "key": "type",
+                  "values": [
+                    "outOfPlay"
+                  ]
+                },
+                {
+                  "key": "originalStartTimeMs",
+                  "values": [
+                    "434861"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "sequenceId": 7,
+          "controllingTeam": "2",
+          "zone": "defensive",
+          "startTimeMs": 433359,
+          "endTimeMs": 450050,
+          "outcome": "stoppage",
+          "actions": [
+            {
+              "markId": "697a0d5bdf690ea4d09819ac",
+              "startTimeMs": 433359,
+              "endTimeMs": 447078,
+              "markTimeMs": 0,
+              "type": "Unknown",
+              "isHome": false,
+              "isTeam1": false,
+              "name": "Unknown",
+              "attributes": [
+                {
+                  "key": "source",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                },
+                {
+                  "key": "type",
+                  "values": [
+                    "faceOff"
+                  ]
+                },
+                {
+                  "key": "result",
+                  "values": [
+                    "won"
+                  ]
+                },
+                {
+                  "key": "team",
+                  "values": [
+                    "2"
+                  ]
+                },
+                {
+                  "key": "originalStartTimeMs",
+                  "values": [
+                    "439359"
+                  ]
+                },
+                {
+                  "key": "originalEndTimeMs",
+                  "values": [
+                    "441078"
+                  ]
+                },
+                {
+                  "key": "zone",
+                  "values": [
+                    "defensive"
+                  ]
+                },
+                {
+                  "key": "playerUserIdTeam2",
+                  "values": [
+                    "18832519"
+                  ]
+                },
+                {
+                  "key": "playerUserIdTeam1",
+                  "values": [
+                    "19287022"
+                  ]
+                }
+              ]
+            },
+            {
+              "markId": "697a0d5bdf690ea4d09819ad",
+              "startTimeMs": 446010,
+              "endTimeMs": 454010,
+              "markTimeMs": 0,
+              "type": "Unknown",
+              "isHome": false,
+              "isTeam1": false,
+              "name": "Unknown",
+              "attributes": [
+                {
+                  "key": "source",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                },
+                {
+                  "key": "type",
+                  "values": [
+                    "infraction"
+                  ]
+                },
+                {
+                  "key": "subType",
+                  "values": [
+                    "icing"
+                  ]
+                },
+                {
+                  "key": "team",
+                  "values": [
+                    "2"
+                  ]
+                },
+                {
+                  "key": "originalStartTimeMs",
+                  "values": [
+                    "450010"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "sequenceId": 8,
+          "controllingTeam": "2",
+          "zone": "defensive",
+          "startTimeMs": 450050,
+          "endTimeMs": 467539,
+          "outcome": "stoppage",
+          "actions": [
+            {
+              "markId": "697a0d5bdf690ea4d09819ae",
+              "startTimeMs": 450050,
+              "endTimeMs": 463311,
+              "markTimeMs": 0,
+              "type": "Unknown",
+              "isHome": false,
+              "isTeam1": false,
+              "name": "Unknown",
+              "attributes": [
+                {
+                  "key": "source",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                },
+                {
+                  "key": "type",
+                  "values": [
+                    "faceOff"
+                  ]
+                },
+                {
+                  "key": "result",
+                  "values": [
+                    "won"
+                  ]
+                },
+                {
+                  "key": "team",
+                  "values": [
+                    "2"
+                  ]
+                },
+                {
+                  "key": "originalStartTimeMs",
+                  "values": [
+                    "456050"
+                  ]
+                },
+                {
+                  "key": "originalEndTimeMs",
+                  "values": [
+                    "457311"
+                  ]
+                },
+                {
+                  "key": "zone",
+                  "values": [
+                    "defensive"
+                  ]
+                },
+                {
+                  "key": "playerUserIdTeam2",
+                  "values": [
+                    "18832519"
+                  ]
+                },
+                {
+                  "key": "playerUserIdTeam1",
+                  "values": [
+                    "19287022"
+                  ]
+                }
+              ]
+            },
+            {
+              "markId": "697a0d5bdf690ea4d09819af",
+              "startTimeMs": 461534,
+              "endTimeMs": 469534,
+              "markTimeMs": 0,
+              "type": "Unknown",
+              "isHome": false,
+              "isTeam1": false,
+              "name": "Unknown",
+              "attributes": [
+                {
+                  "key": "source",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                },
+                {
+                  "key": "type",
+                  "values": [
+                    "infraction"
+                  ]
+                },
+                {
+                  "key": "subType",
+                  "values": [
+                    "icing"
+                  ]
+                },
+                {
+                  "key": "team",
+                  "values": [
+                    "2"
+                  ]
+                },
+                {
+                  "key": "originalStartTimeMs",
+                  "values": [
+                    "465534"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "sequenceId": 9,
+          "controllingTeam": "1",
+          "zone": "offensive",
+          "startTimeMs": 467539,
+          "endTimeMs": 568049,
+          "outcome": "stoppage",
+          "actions": [
+            {
+              "markId": "697a0d5bdf690ea4d09819b0",
+              "startTimeMs": 467539,
+              "endTimeMs": 480061,
+              "markTimeMs": 0,
+              "type": "Unknown",
+              "isHome": false,
+              "isTeam1": false,
+              "name": "Unknown",
+              "attributes": [
+                {
+                  "key": "source",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                },
+                {
+                  "key": "type",
+                  "values": [
+                    "faceOff"
+                  ]
+                },
+                {
+                  "key": "result",
+                  "values": [
+                    "won"
+                  ]
+                },
+                {
+                  "key": "team",
+                  "values": [
+                    "1"
+                  ]
+                },
+                {
+                  "key": "originalStartTimeMs",
+                  "values": [
+                    "473539"
+                  ]
+                },
+                {
+                  "key": "originalEndTimeMs",
+                  "values": [
+                    "474061"
+                  ]
+                },
+                {
+                  "key": "zone",
+                  "values": [
+                    "offensive"
+                  ]
+                },
+                {
+                  "key": "playerUserIdTeam1",
+                  "values": [
+                    "28847320"
+                  ]
+                },
+                {
+                  "key": "playerUserIdTeam2",
+                  "values": [
+                    "18832519"
+                  ]
+                }
+              ]
+            },
+            {
+              "markId": "697a0d5bdf690ea4d09819b1",
+              "startTimeMs": 468644,
+              "endTimeMs": 478644,
+              "markTimeMs": 0,
+              "type": "Unknown",
+              "isHome": false,
+              "isTeam1": false,
+              "name": "Unknown",
+              "attributes": [
+                {
+                  "key": "source",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                },
+                {
+                  "key": "type",
+                  "values": [
+                    "shot"
+                  ]
+                },
+                {
+                  "key": "result",
+                  "values": [
+                    "saved"
+                  ]
+                },
+                {
+                  "key": "team",
+                  "values": [
+                    "1"
+                  ]
+                },
+                {
+                  "key": "originalStartTimeMs",
+                  "values": [
+                    "474644"
+                  ]
+                },
+                {
+                  "key": "playerUserId",
+                  "values": [
+                    "20168024"
+                  ]
+                },
+                {
+                  "key": "playerJerseyTeam2",
+                  "values": [
+                    "35"
+                  ]
+                },
+                {
+                  "key": "startLocationX",
+                  "values": [
+                    "0.4814814814814814"
+                  ]
+                },
+                {
+                  "key": "startLocationY",
+                  "values": [
+                    "0.6115942028985507"
+                  ]
+                }
+              ]
+            },
+            {
+              "markId": "697a0d5bdf690ea4d09819b2",
+              "startTimeMs": 481876,
+              "endTimeMs": 491876,
+              "markTimeMs": 0,
+              "type": "Unknown",
+              "isHome": false,
+              "isTeam1": false,
+              "name": "Unknown",
+              "attributes": [
+                {
+                  "key": "source",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                },
+                {
+                  "key": "type",
+                  "values": [
+                    "shot"
+                  ]
+                },
+                {
+                  "key": "result",
+                  "values": [
+                    "missed"
+                  ]
+                },
+                {
+                  "key": "team",
+                  "values": [
+                    "1"
+                  ]
+                },
+                {
+                  "key": "originalStartTimeMs",
+                  "values": [
+                    "487876"
+                  ]
+                },
+                {
+                  "key": "playerUserId",
+                  "values": [
+                    "20168042"
+                  ]
+                },
+                {
+                  "key": "startLocationX",
+                  "values": [
+                    "0.8444444444444446"
+                  ]
+                },
+                {
+                  "key": "startLocationY",
+                  "values": [
+                    "0.4318840579710145"
+                  ]
+                }
+              ]
+            },
+            {
+              "markId": "697a0d5bdf690ea4d09819b3",
+              "startTimeMs": 498420,
+              "endTimeMs": 508420,
+              "markTimeMs": 0,
+              "type": "Unknown",
+              "isHome": false,
+              "isTeam1": false,
+              "name": "Unknown",
+              "attributes": [
+                {
+                  "key": "source",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                },
+                {
+                  "key": "type",
+                  "values": [
+                    "shot"
+                  ]
+                },
+                {
+                  "key": "result",
+                  "values": [
+                    "missed"
+                  ]
+                },
+                {
+                  "key": "team",
+                  "values": [
+                    "2"
+                  ]
+                },
+                {
+                  "key": "originalStartTimeMs",
+                  "values": [
+                    "504420"
+                  ]
+                },
+                {
+                  "key": "playerUserId",
+                  "values": [
+                    "18832523"
+                  ]
+                },
+                {
+                  "key": "startLocationX",
+                  "values": [
+                    "-0.45185185185185184"
+                  ]
+                },
+                {
+                  "key": "startLocationY",
+                  "values": [
+                    "0.518840579710145"
+                  ]
+                }
+              ]
+            },
+            {
+              "markId": "697a0d5bdf690ea4d09819b4",
+              "startTimeMs": 511060,
+              "endTimeMs": 521060,
+              "markTimeMs": 0,
+              "type": "Unknown",
+              "isHome": false,
+              "isTeam1": false,
+              "name": "Unknown",
+              "attributes": [
+                {
+                  "key": "source",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                },
+                {
+                  "key": "type",
+                  "values": [
+                    "shot"
+                  ]
+                },
+                {
+                  "key": "result",
+                  "values": [
+                    "blocked"
+                  ]
+                },
+                {
+                  "key": "team",
+                  "values": [
+                    "2"
+                  ]
+                },
+                {
+                  "key": "originalStartTimeMs",
+                  "values": [
+                    "517060"
+                  ]
+                },
+                {
+                  "key": "playerUserId",
+                  "values": [
+                    "18832523"
+                  ]
+                },
+                {
+                  "key": "playerUserIdTeam1",
+                  "values": [
+                    "22055098"
+                  ]
+                },
+                {
+                  "key": "startLocationX",
+                  "values": [
+                    "-0.4"
+                  ]
+                },
+                {
+                  "key": "startLocationY",
+                  "values": [
+                    "0.6202898550724638"
+                  ]
+                }
+              ]
+            },
+            {
+              "markId": "697a0d5bdf690ea4d09819b5",
+              "startTimeMs": 551623,
+              "endTimeMs": 561623,
+              "markTimeMs": 0,
+              "type": "Unknown",
+              "isHome": false,
+              "isTeam1": false,
+              "name": "Unknown",
+              "attributes": [
+                {
+                  "key": "source",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                },
+                {
+                  "key": "type",
+                  "values": [
+                    "shot"
+                  ]
+                },
+                {
+                  "key": "result",
+                  "values": [
+                    "saved"
+                  ]
+                },
+                {
+                  "key": "team",
+                  "values": [
+                    "1"
+                  ]
+                },
+                {
+                  "key": "originalStartTimeMs",
+                  "values": [
+                    "557623"
+                  ]
+                },
+                {
+                  "key": "playerJerseyTeam2",
+                  "values": [
+                    "35"
+                  ]
+                },
+                {
+                  "key": "playerUserId",
+                  "values": [
+                    "18390495"
+                  ]
+                },
+                {
+                  "key": "startLocationX",
+                  "values": [
+                    "-0.5925925925925926"
+                  ]
+                },
+                {
+                  "key": "startLocationY",
+                  "values": [
+                    "0.6405797101449275"
+                  ]
+                }
+              ]
+            },
+            {
+              "markId": "697a0d5bdf690ea4d09819b6",
+              "startTimeMs": 555029,
+              "endTimeMs": 563029,
+              "markTimeMs": 0,
+              "type": "Unknown",
+              "isHome": false,
+              "isTeam1": false,
+              "name": "Unknown",
+              "attributes": [
+                {
+                  "key": "source",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                },
+                {
+                  "key": "type",
+                  "values": [
+                    "outOfPlay"
+                  ]
+                },
+                {
+                  "key": "originalStartTimeMs",
+                  "values": [
+                    "559029"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "sequenceId": 10,
+          "controllingTeam": "2",
+          "zone": "offensive",
+          "startTimeMs": 568049,
+          "endTimeMs": 585386,
+          "outcome": "stoppage",
+          "actions": [
+            {
+              "markId": "697a0d5bdf690ea4d09819b7",
+              "startTimeMs": 568049,
+              "endTimeMs": 582311,
+              "markTimeMs": 0,
+              "type": "Unknown",
+              "isHome": false,
+              "isTeam1": false,
+              "name": "Unknown",
+              "attributes": [
+                {
+                  "key": "source",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                },
+                {
+                  "key": "type",
+                  "values": [
+                    "faceOff"
+                  ]
+                },
+                {
+                  "key": "result",
+                  "values": [
+                    "won"
+                  ]
+                },
+                {
+                  "key": "team",
+                  "values": [
+                    "1"
+                  ]
+                },
+                {
+                  "key": "originalStartTimeMs",
+                  "values": [
+                    "574049"
+                  ]
+                },
+                {
+                  "key": "originalEndTimeMs",
+                  "values": [
+                    "576311"
+                  ]
+                },
+                {
+                  "key": "zone",
+                  "values": [
+                    "offensive"
+                  ]
+                },
+                {
+                  "key": "playerUserIdTeam1",
+                  "values": [
+                    "19287022"
+                  ]
+                },
+                {
+                  "key": "playerJerseyTeam2",
+                  "values": [
+                    "5"
+                  ]
+                },
+                {
+                  "key": "lastModified",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                }
+              ]
+            },
+            {
+              "markId": "697a0d5bdf690ea4d09819b8",
+              "startTimeMs": 578019,
+              "endTimeMs": 588019,
+              "markTimeMs": 0,
+              "type": "Unknown",
+              "isHome": false,
+              "isTeam1": false,
+              "name": "Unknown",
+              "attributes": [
+                {
+                  "key": "source",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                },
+                {
+                  "key": "type",
+                  "values": [
+                    "shot"
+                  ]
+                },
+                {
+                  "key": "result",
+                  "values": [
+                    "blocked"
+                  ]
+                },
+                {
+                  "key": "team",
+                  "values": [
+                    "2"
+                  ]
+                },
+                {
+                  "key": "originalStartTimeMs",
+                  "values": [
+                    "584019"
+                  ]
+                },
+                {
+                  "key": "playerJersey",
+                  "values": [
+                    "5"
+                  ]
+                },
+                {
+                  "key": "playerUserIdTeam1",
+                  "values": [
+                    "28791054"
+                  ]
+                },
+                {
+                  "key": "startLocationX",
+                  "values": [
+                    "0.6962962962962962"
+                  ]
+                },
+                {
+                  "key": "startLocationY",
+                  "values": [
+                    "0.6927536231884057"
+                  ]
+                }
+              ]
+            },
+            {
+              "markId": "697a0d5bdf690ea4d09819b9",
+              "startTimeMs": 579664,
+              "endTimeMs": 589664,
+              "markTimeMs": 0,
+              "type": "Unknown",
+              "isHome": false,
+              "isTeam1": false,
+              "name": "Unknown",
+              "attributes": [
+                {
+                  "key": "source",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                },
+                {
+                  "key": "type",
+                  "values": [
+                    "shot"
+                  ]
+                },
+                {
+                  "key": "result",
+                  "values": [
+                    "goal"
+                  ]
+                },
+                {
+                  "key": "team",
+                  "values": [
+                    "2"
+                  ]
+                },
+                {
+                  "key": "originalStartTimeMs",
+                  "values": [
+                    "585664"
+                  ]
+                },
+                {
+                  "key": "playerUserIdTeam1",
+                  "values": [
+                    "28791083"
+                  ]
+                },
+                {
+                  "key": "playerJersey",
+                  "values": [
+                    "5"
+                  ]
+                },
+                {
+                  "key": "startLocationX",
+                  "values": [
+                    "0.48888888888888893"
+                  ]
+                },
+                {
+                  "key": "startLocationY",
+                  "values": [
+                    "0.8202898550724638"
+                  ]
+                },
+                {
+                  "key": "lastModified",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "sequenceId": 11,
+          "controllingTeam": "2",
+          "zone": "neutral",
+          "startTimeMs": 585386,
+          "endTimeMs": 632006,
+          "outcome": "stoppage",
+          "actions": [
+            {
+              "markId": "697a0d5bdf690ea4d09819ba",
+              "startTimeMs": 585386,
+              "endTimeMs": 600216,
+              "markTimeMs": 0,
+              "type": "Unknown",
+              "isHome": false,
+              "isTeam1": false,
+              "name": "Unknown",
+              "attributes": [
+                {
+                  "key": "source",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                },
+                {
+                  "key": "type",
+                  "values": [
+                    "faceOff"
+                  ]
+                },
+                {
+                  "key": "result",
+                  "values": [
+                    "won"
+                  ]
+                },
+                {
+                  "key": "team",
+                  "values": [
+                    "1"
+                  ]
+                },
+                {
+                  "key": "originalStartTimeMs",
+                  "values": [
+                    "591386"
+                  ]
+                },
+                {
+                  "key": "originalEndTimeMs",
+                  "values": [
+                    "594216"
+                  ]
+                },
+                {
+                  "key": "zone",
+                  "values": [
+                    "neutral"
+                  ]
+                },
+                {
+                  "key": "playerUserIdTeam1",
+                  "values": [
+                    "17798210"
+                  ]
+                },
+                {
+                  "key": "playerJerseyTeam2",
+                  "values": [
+                    "3"
+                  ]
+                }
+              ]
+            },
+            {
+              "markId": "697a0d5bdf690ea4d09819bb",
+              "startTimeMs": 608778,
+              "endTimeMs": 616778,
+              "markTimeMs": 0,
+              "type": "Unknown",
+              "isHome": false,
+              "isTeam1": false,
+              "name": "Unknown",
+              "attributes": [
+                {
+                  "key": "source",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                },
+                {
+                  "key": "type",
+                  "values": [
+                    "penalty"
+                  ]
+                },
+                {
+                  "key": "subType",
+                  "values": [
+                    "minor"
+                  ]
+                },
+                {
+                  "key": "team",
+                  "values": [
+                    "2"
+                  ]
+                },
+                {
+                  "key": "linkId",
+                  "values": [
+                    "1769596610866"
+                  ]
+                },
+                {
+                  "key": "originalStartTimeMs",
+                  "values": [
+                    "612778"
+                  ]
+                },
+                {
+                  "key": "zone",
+                  "values": [
+                    "defensive"
+                  ]
+                },
+                {
+                  "key": "playerUserIdTeam2",
+                  "values": [
+                    "17559210"
+                  ]
+                }
+              ]
+            },
+            {
+              "markId": "697a0d5bdf690ea4d09819bc",
+              "startTimeMs": 613334,
+              "endTimeMs": 621334,
+              "markTimeMs": 0,
+              "type": "Unknown",
+              "isHome": false,
+              "isTeam1": false,
+              "name": "Unknown",
+              "attributes": [
+                {
+                  "key": "source",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                },
+                {
+                  "key": "type",
+                  "values": [
+                    "outOfPlay"
+                  ]
+                },
+                {
+                  "key": "originalStartTimeMs",
+                  "values": [
+                    "617334"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "sequenceId": 12,
+          "controllingTeam": "1",
+          "zone": "defensive",
+          "startTimeMs": 632006,
+          "endTimeMs": 645227,
+          "outcome": "stoppage",
+          "actions": [
+            {
+              "markId": "697a0d5bdf690ea4d09819bd",
+              "startTimeMs": 632006,
+              "endTimeMs": 646012,
+              "markTimeMs": 0,
+              "type": "Unknown",
+              "isHome": false,
+              "isTeam1": false,
+              "name": "Unknown",
+              "attributes": [
+                {
+                  "key": "source",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                },
+                {
+                  "key": "type",
+                  "values": [
+                    "faceOff"
+                  ]
+                },
+                {
+                  "key": "result",
+                  "values": [
+                    "won"
+                  ]
+                },
+                {
+                  "key": "team",
+                  "values": [
+                    "2"
+                  ]
+                },
+                {
+                  "key": "originalStartTimeMs",
+                  "values": [
+                    "638006"
+                  ]
+                },
+                {
+                  "key": "originalEndTimeMs",
+                  "values": [
+                    "640012"
+                  ]
+                },
+                {
+                  "key": "zone",
+                  "values": [
+                    "defensive"
+                  ]
+                },
+                {
+                  "key": "playerJerseyTeam2",
+                  "values": [
+                    "3"
+                  ]
+                },
+                {
+                  "key": "playerUserIdTeam1",
+                  "values": [
+                    "17798210"
+                  ]
+                }
+              ]
+            },
+            {
+              "markId": "697a0d5bdf690ea4d09819be",
+              "startTimeMs": 632006,
+              "endTimeMs": 776895,
+              "markTimeMs": 0,
+              "type": "Unknown",
+              "isHome": false,
+              "isTeam1": false,
+              "name": "Unknown",
+              "attributes": [
+                {
+                  "key": "source",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                },
+                {
+                  "key": "type",
+                  "values": [
+                    "penaltyServed"
+                  ]
+                },
+                {
+                  "key": "team",
+                  "values": [
+                    "2"
+                  ]
+                },
+                {
+                  "key": "linkId",
+                  "values": [
+                    "1769596610866"
+                  ]
+                },
+                {
+                  "key": "originalStartTimeMs",
+                  "values": [
+                    "638006"
+                  ]
+                },
+                {
+                  "key": "originalEndTimeMs",
+                  "values": [
+                    "772895"
+                  ]
+                },
+                {
+                  "key": "playerUserIdTeam2",
+                  "values": [
+                    "17559210"
+                  ]
+                }
+              ]
+            },
+            {
+              "markId": "697a0d5bdf690ea4d09819bf",
+              "startTimeMs": 636433,
+              "endTimeMs": 646433,
+              "markTimeMs": 0,
+              "type": "Unknown",
+              "isHome": false,
+              "isTeam1": false,
+              "name": "Unknown",
+              "attributes": [
+                {
+                  "key": "source",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                },
+                {
+                  "key": "type",
+                  "values": [
+                    "shot"
+                  ]
+                },
+                {
+                  "key": "result",
+                  "values": [
+                    "blocked"
+                  ]
+                },
+                {
+                  "key": "team",
+                  "values": [
+                    "1"
+                  ]
+                },
+                {
+                  "key": "originalStartTimeMs",
+                  "values": [
+                    "642433"
+                  ]
+                },
+                {
+                  "key": "playerUserId",
+                  "values": [
+                    "28791054"
+                  ]
+                },
+                {
+                  "key": "playerUserIdTeam2",
+                  "values": [
+                    "17116623"
+                  ]
+                },
+                {
+                  "key": "startLocationX",
+                  "values": [
+                    "-0.5037037037037038"
+                  ]
+                },
+                {
+                  "key": "startLocationY",
+                  "values": [
+                    "0.4260869565217391"
+                  ]
+                }
+              ]
+            },
+            {
+              "markId": "697a0d5bdf690ea4d09819c0",
+              "startTimeMs": 640797,
+              "endTimeMs": 648797,
+              "markTimeMs": 0,
+              "type": "Unknown",
+              "isHome": false,
+              "isTeam1": false,
+              "name": "Unknown",
+              "attributes": [
+                {
+                  "key": "source",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                },
+                {
+                  "key": "type",
+                  "values": [
+                    "outOfPlay"
+                  ]
+                },
+                {
+                  "key": "originalStartTimeMs",
+                  "values": [
+                    "644797"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "sequenceId": 13,
+          "controllingTeam": "1",
+          "zone": "offensive",
+          "startTimeMs": 645227,
+          "endTimeMs": 756550,
+          "outcome": "stoppage",
+          "actions": [
+            {
+              "markId": "697a0d5bdf690ea4d09819c1",
+              "startTimeMs": 645227,
+              "endTimeMs": 659287,
+              "markTimeMs": 0,
+              "type": "Unknown",
+              "isHome": false,
+              "isTeam1": false,
+              "name": "Unknown",
+              "attributes": [
+                {
+                  "key": "source",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                },
+                {
+                  "key": "type",
+                  "values": [
+                    "faceOff"
+                  ]
+                },
+                {
+                  "key": "result",
+                  "values": [
+                    "won"
+                  ]
+                },
+                {
+                  "key": "team",
+                  "values": [
+                    "1"
+                  ]
+                },
+                {
+                  "key": "originalStartTimeMs",
+                  "values": [
+                    "651227"
+                  ]
+                },
+                {
+                  "key": "originalEndTimeMs",
+                  "values": [
+                    "653287"
+                  ]
+                },
+                {
+                  "key": "zone",
+                  "values": [
+                    "offensive"
+                  ]
+                },
+                {
+                  "key": "playerUserIdTeam1",
+                  "values": [
+                    "17798210"
+                  ]
+                },
+                {
+                  "key": "playerJerseyTeam2",
+                  "values": [
+                    "3"
+                  ]
+                }
+              ]
+            },
+            {
+              "markId": "697a0d5bdf690ea4d09819c2",
+              "startTimeMs": 676675,
+              "endTimeMs": 686675,
+              "markTimeMs": 0,
+              "type": "Unknown",
+              "isHome": false,
+              "isTeam1": false,
+              "name": "Unknown",
+              "attributes": [
+                {
+                  "key": "source",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                },
+                {
+                  "key": "type",
+                  "values": [
+                    "shot"
+                  ]
+                },
+                {
+                  "key": "result",
+                  "values": [
+                    "missed"
+                  ]
+                },
+                {
+                  "key": "team",
+                  "values": [
+                    "1"
+                  ]
+                },
+                {
+                  "key": "originalStartTimeMs",
+                  "values": [
+                    "682675"
+                  ]
+                },
+                {
+                  "key": "playerUserId",
+                  "values": [
+                    "17798210"
+                  ]
+                },
+                {
+                  "key": "startLocationX",
+                  "values": [
+                    "-0.14074074074074072"
+                  ]
+                },
+                {
+                  "key": "startLocationY",
+                  "values": [
+                    "0.5449275362318841"
+                  ]
+                }
+              ]
+            },
+            {
+              "markId": "697a0d5bdf690ea4d09819c3",
+              "startTimeMs": 750270,
+              "endTimeMs": 760270,
+              "markTimeMs": 0,
+              "type": "Unknown",
+              "isHome": false,
+              "isTeam1": false,
+              "name": "Unknown",
+              "attributes": [
+                {
+                  "key": "source",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                },
+                {
+                  "key": "type",
+                  "values": [
+                    "shot"
+                  ]
+                },
+                {
+                  "key": "result",
+                  "values": [
+                    "saved"
+                  ]
+                },
+                {
+                  "key": "team",
+                  "values": [
+                    "1"
+                  ]
+                },
+                {
+                  "key": "originalStartTimeMs",
+                  "values": [
+                    "756270"
+                  ]
+                },
+                {
+                  "key": "playerJerseyTeam2",
+                  "values": [
+                    "35"
+                  ]
+                },
+                {
+                  "key": "playerUserId",
+                  "values": [
+                    "28791479"
+                  ]
+                },
+                {
+                  "key": "startLocationX",
+                  "values": [
+                    "-0.31851851851851853"
+                  ]
+                },
+                {
+                  "key": "startLocationY",
+                  "values": [
+                    "0.8231884057971015"
+                  ]
+                }
+              ]
+            },
+            {
+              "markId": "697a0d5bdf690ea4d09819c4",
+              "startTimeMs": 753936,
+              "endTimeMs": 761936,
+              "markTimeMs": 0,
+              "type": "Unknown",
+              "isHome": false,
+              "isTeam1": false,
+              "name": "Unknown",
+              "attributes": [
+                {
+                  "key": "source",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                },
+                {
+                  "key": "type",
+                  "values": [
+                    "outOfPlay"
+                  ]
+                },
+                {
+                  "key": "originalStartTimeMs",
+                  "values": [
+                    "757936"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "sequenceId": 14,
+          "controllingTeam": "1",
+          "zone": "defensive",
+          "startTimeMs": 756550,
+          "endTimeMs": 808729,
+          "outcome": "stoppage",
+          "actions": [
+            {
+              "markId": "697a0d5bdf690ea4d09819c5",
+              "startTimeMs": 756550,
+              "endTimeMs": 770753,
+              "markTimeMs": 0,
+              "type": "Unknown",
+              "isHome": false,
+              "isTeam1": false,
+              "name": "Unknown",
+              "attributes": [
+                {
+                  "key": "source",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                },
+                {
+                  "key": "type",
+                  "values": [
+                    "faceOff"
+                  ]
+                },
+                {
+                  "key": "result",
+                  "values": [
+                    "won"
+                  ]
+                },
+                {
+                  "key": "team",
+                  "values": [
+                    "2"
+                  ]
+                },
+                {
+                  "key": "originalStartTimeMs",
+                  "values": [
+                    "762550"
+                  ]
+                },
+                {
+                  "key": "originalEndTimeMs",
+                  "values": [
+                    "764753"
+                  ]
+                },
+                {
+                  "key": "zone",
+                  "values": [
+                    "defensive"
+                  ]
+                },
+                {
+                  "key": "playerUserIdTeam2",
+                  "values": [
+                    "21535558"
+                  ]
+                },
+                {
+                  "key": "playerUserIdTeam1",
+                  "values": [
+                    "19287022"
+                  ]
+                }
+              ]
+            },
+            {
+              "markId": "697a0d5bdf690ea4d09819c6",
+              "startTimeMs": 776476,
+              "endTimeMs": 786476,
+              "markTimeMs": 0,
+              "type": "Unknown",
+              "isHome": false,
+              "isTeam1": false,
+              "name": "Unknown",
+              "attributes": [
+                {
+                  "key": "source",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                },
+                {
+                  "key": "type",
+                  "values": [
+                    "shot"
+                  ]
+                },
+                {
+                  "key": "result",
+                  "values": [
+                    "missed"
+                  ]
+                },
+                {
+                  "key": "team",
+                  "values": [
+                    "1"
+                  ]
+                },
+                {
+                  "key": "originalStartTimeMs",
+                  "values": [
+                    "782476"
+                  ]
+                },
+                {
+                  "key": "playerUserId",
+                  "values": [
+                    "20379463"
+                  ]
+                },
+                {
+                  "key": "startLocationX",
+                  "values": [
+                    "-0.6370370370370371"
+                  ]
+                },
+                {
+                  "key": "startLocationY",
+                  "values": [
+                    "0.3739130434782608"
+                  ]
+                }
+              ]
+            },
+            {
+              "markId": "697a0d5bdf690ea4d09819c7",
+              "startTimeMs": 803489,
+              "endTimeMs": 811489,
+              "markTimeMs": 0,
+              "type": "Unknown",
+              "isHome": false,
+              "isTeam1": false,
+              "name": "Unknown",
+              "attributes": [
+                {
+                  "key": "source",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                },
+                {
+                  "key": "type",
+                  "values": [
+                    "infraction"
+                  ]
+                },
+                {
+                  "key": "subType",
+                  "values": [
+                    "icing"
+                  ]
+                },
+                {
+                  "key": "team",
+                  "values": [
+                    "2"
+                  ]
+                },
+                {
+                  "key": "originalStartTimeMs",
+                  "values": [
+                    "807489"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "sequenceId": 15,
+          "controllingTeam": "1",
+          "zone": "offensive",
+          "startTimeMs": 808729,
+          "endTimeMs": 849675,
+          "outcome": "stoppage",
+          "actions": [
+            {
+              "markId": "697a0d5bdf690ea4d09819c8",
+              "startTimeMs": 808729,
+              "endTimeMs": 823479,
+              "markTimeMs": 0,
+              "type": "Unknown",
+              "isHome": false,
+              "isTeam1": false,
+              "name": "Unknown",
+              "attributes": [
+                {
+                  "key": "source",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                },
+                {
+                  "key": "type",
+                  "values": [
+                    "faceOff"
+                  ]
+                },
+                {
+                  "key": "result",
+                  "values": [
+                    "won"
+                  ]
+                },
+                {
+                  "key": "team",
+                  "values": [
+                    "1"
+                  ]
+                },
+                {
+                  "key": "originalStartTimeMs",
+                  "values": [
+                    "814729"
+                  ]
+                },
+                {
+                  "key": "originalEndTimeMs",
+                  "values": [
+                    "817479"
+                  ]
+                },
+                {
+                  "key": "zone",
+                  "values": [
+                    "offensive"
+                  ]
+                },
+                {
+                  "key": "playerUserIdTeam1",
+                  "values": [
+                    "28791158"
+                  ]
+                },
+                {
+                  "key": "playerUserIdTeam2",
+                  "values": [
+                    "18832519"
+                  ]
+                }
+              ]
+            },
+            {
+              "markId": "697a0d5bdf690ea4d09819c9",
+              "startTimeMs": 811364,
+              "endTimeMs": 821364,
+              "markTimeMs": 0,
+              "type": "Unknown",
+              "isHome": false,
+              "isTeam1": false,
+              "name": "Unknown",
+              "attributes": [
+                {
+                  "key": "source",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                },
+                {
+                  "key": "type",
+                  "values": [
+                    "shot"
+                  ]
+                },
+                {
+                  "key": "result",
+                  "values": [
+                    "missed"
+                  ]
+                },
+                {
+                  "key": "team",
+                  "values": [
+                    "1"
+                  ]
+                },
+                {
+                  "key": "originalStartTimeMs",
+                  "values": [
+                    "817364"
+                  ]
+                },
+                {
+                  "key": "playerUserId",
+                  "values": [
+                    "28791061"
+                  ]
+                },
+                {
+                  "key": "startLocationX",
+                  "values": [
+                    "-0.5555555555555556"
+                  ]
+                },
+                {
+                  "key": "startLocationY",
+                  "values": [
+                    "0.4521739130434783"
+                  ]
+                }
+              ]
+            },
+            {
+              "markId": "697a0d5bdf690ea4d09819ca",
+              "startTimeMs": 848794,
+              "endTimeMs": 856794,
+              "markTimeMs": 0,
+              "type": "Unknown",
+              "isHome": false,
+              "isTeam1": false,
+              "name": "Unknown",
+              "attributes": [
+                {
+                  "key": "source",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                },
+                {
+                  "key": "type",
+                  "values": [
+                    "infraction"
+                  ]
+                },
+                {
+                  "key": "subType",
+                  "values": [
+                    "offsides"
+                  ]
+                },
+                {
+                  "key": "team",
+                  "values": [
+                    "2"
+                  ]
+                },
+                {
+                  "key": "originalStartTimeMs",
+                  "values": [
+                    "852794"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "sequenceId": 16,
+          "controllingTeam": "2",
+          "zone": "neutral",
+          "startTimeMs": 849675,
+          "endTimeMs": 871838,
+          "outcome": "stoppage",
+          "actions": [
+            {
+              "markId": "697a0d5bdf690ea4d09819cb",
+              "startTimeMs": 849675,
+              "endTimeMs": 862807,
+              "markTimeMs": 0,
+              "type": "Unknown",
+              "isHome": false,
+              "isTeam1": false,
+              "name": "Unknown",
+              "attributes": [
+                {
+                  "key": "source",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                },
+                {
+                  "key": "type",
+                  "values": [
+                    "faceOff"
+                  ]
+                },
+                {
+                  "key": "result",
+                  "values": [
+                    "won"
+                  ]
+                },
+                {
+                  "key": "team",
+                  "values": [
+                    "2"
+                  ]
+                },
+                {
+                  "key": "originalStartTimeMs",
+                  "values": [
+                    "855675"
+                  ]
+                },
+                {
+                  "key": "originalEndTimeMs",
+                  "values": [
+                    "856807"
+                  ]
+                },
+                {
+                  "key": "zone",
+                  "values": [
+                    "neutral"
+                  ]
+                },
+                {
+                  "key": "playerJerseyTeam2",
+                  "values": [
+                    "3"
+                  ]
+                },
+                {
+                  "key": "playerUserIdTeam1",
+                  "values": [
+                    "17798210"
+                  ]
+                }
+              ]
+            },
+            {
+              "markId": "697a0d5bdf690ea4d09819cc",
+              "startTimeMs": 865294,
+              "endTimeMs": 875294,
+              "markTimeMs": 0,
+              "type": "Unknown",
+              "isHome": false,
+              "isTeam1": false,
+              "name": "Unknown",
+              "attributes": [
+                {
+                  "key": "source",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                },
+                {
+                  "key": "type",
+                  "values": [
+                    "shot"
+                  ]
+                },
+                {
+                  "key": "result",
+                  "values": [
+                    "saved"
+                  ]
+                },
+                {
+                  "key": "team",
+                  "values": [
+                    "2"
+                  ]
+                },
+                {
+                  "key": "originalStartTimeMs",
+                  "values": [
+                    "871294"
+                  ]
+                },
+                {
+                  "key": "playerUserIdTeam1",
+                  "values": [
+                    "28791083"
+                  ]
+                },
+                {
+                  "key": "playerJersey",
+                  "values": [
+                    "3"
+                  ]
+                },
+                {
+                  "key": "startLocationX",
+                  "values": [
+                    "-0.4"
+                  ]
+                },
+                {
+                  "key": "startLocationY",
+                  "values": [
+                    "0.47246376811594204"
+                  ]
+                }
+              ]
+            },
+            {
+              "markId": "697a0d5bdf690ea4d09819cd",
+              "startTimeMs": 868844,
+              "endTimeMs": 876844,
+              "markTimeMs": 0,
+              "type": "Unknown",
+              "isHome": false,
+              "isTeam1": false,
+              "name": "Unknown",
+              "attributes": [
+                {
+                  "key": "source",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                },
+                {
+                  "key": "type",
+                  "values": [
+                    "outOfPlay"
+                  ]
+                },
+                {
+                  "key": "originalStartTimeMs",
+                  "values": [
+                    "872844"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "sequenceId": 17,
+          "controllingTeam": "2",
+          "zone": "offensive",
+          "startTimeMs": 871838,
+          "endTimeMs": 919205,
+          "outcome": "stoppage",
+          "actions": [
+            {
+              "markId": "697a0d5bdf690ea4d09819ce",
+              "startTimeMs": 871838,
+              "endTimeMs": 885591,
+              "markTimeMs": 0,
+              "type": "Unknown",
+              "isHome": false,
+              "isTeam1": false,
+              "name": "Unknown",
+              "attributes": [
+                {
+                  "key": "source",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                },
+                {
+                  "key": "type",
+                  "values": [
+                    "faceOff"
+                  ]
+                },
+                {
+                  "key": "result",
+                  "values": [
+                    "won"
+                  ]
+                },
+                {
+                  "key": "team",
+                  "values": [
+                    "2"
+                  ]
+                },
+                {
+                  "key": "originalStartTimeMs",
+                  "values": [
+                    "877838"
+                  ]
+                },
+                {
+                  "key": "originalEndTimeMs",
+                  "values": [
+                    "879591"
+                  ]
+                },
+                {
+                  "key": "zone",
+                  "values": [
+                    "offensive"
+                  ]
+                },
+                {
+                  "key": "playerJerseyTeam2",
+                  "values": [
+                    "3"
+                  ]
+                },
+                {
+                  "key": "playerUserIdTeam1",
+                  "values": [
+                    "19287022"
+                  ]
+                }
+              ]
+            },
+            {
+              "markId": "697a0d5bdf690ea4d09819cf",
+              "startTimeMs": 895809,
+              "endTimeMs": 905809,
+              "markTimeMs": 0,
+              "type": "Unknown",
+              "isHome": false,
+              "isTeam1": false,
+              "name": "Unknown",
+              "attributes": [
+                {
+                  "key": "source",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                },
+                {
+                  "key": "type",
+                  "values": [
+                    "shot"
+                  ]
+                },
+                {
+                  "key": "result",
+                  "values": [
+                    "blocked"
+                  ]
+                },
+                {
+                  "key": "team",
+                  "values": [
+                    "1"
+                  ]
+                },
+                {
+                  "key": "originalStartTimeMs",
+                  "values": [
+                    "901809"
+                  ]
+                },
+                {
+                  "key": "playerUserId",
+                  "values": [
+                    "28791479"
+                  ]
+                },
+                {
+                  "key": "playerUserIdTeam2",
+                  "values": [
+                    "17559210"
+                  ]
+                },
+                {
+                  "key": "startLocationX",
+                  "values": [
+                    "-0.007407407407407418"
+                  ]
+                },
+                {
+                  "key": "startLocationY",
+                  "values": [
+                    "0.5043478260869565"
+                  ]
+                }
+              ]
+            },
+            {
+              "markId": "697a0d5bdf690ea4d09819d0",
+              "startTimeMs": 911973,
+              "endTimeMs": 921973,
+              "markTimeMs": 0,
+              "type": "Unknown",
+              "isHome": false,
+              "isTeam1": false,
+              "name": "Unknown",
+              "attributes": [
+                {
+                  "key": "source",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                },
+                {
+                  "key": "type",
+                  "values": [
+                    "shot"
+                  ]
+                },
+                {
+                  "key": "result",
+                  "values": [
+                    "saved"
+                  ]
+                },
+                {
+                  "key": "team",
+                  "values": [
+                    "2"
+                  ]
+                },
+                {
+                  "key": "originalStartTimeMs",
+                  "values": [
+                    "917973"
+                  ]
+                },
+                {
+                  "key": "playerUserIdTeam1",
+                  "values": [
+                    "28791083"
+                  ]
+                },
+                {
+                  "key": "playerUserId",
+                  "values": [
+                    "18462739"
+                  ]
+                },
+                {
+                  "key": "startLocationX",
+                  "values": [
+                    "-0.762962962962963"
+                  ]
+                },
+                {
+                  "key": "startLocationY",
+                  "values": [
+                    "0.47246376811594204"
+                  ]
+                }
+              ]
+            },
+            {
+              "markId": "697a0d5bdf690ea4d09819d1",
+              "startTimeMs": 915736,
+              "endTimeMs": 923736,
+              "markTimeMs": 0,
+              "type": "Unknown",
+              "isHome": false,
+              "isTeam1": false,
+              "name": "Unknown",
+              "attributes": [
+                {
+                  "key": "source",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                },
+                {
+                  "key": "type",
+                  "values": [
+                    "outOfPlay"
+                  ]
+                },
+                {
+                  "key": "originalStartTimeMs",
+                  "values": [
+                    "919736"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "sequenceId": 18,
+          "controllingTeam": "1",
+          "zone": "defensive",
+          "startTimeMs": 919205,
+          "endTimeMs": 938159,
+          "outcome": "stoppage",
+          "actions": [
+            {
+              "markId": "697a0d5bdf690ea4d09819d2",
+              "startTimeMs": 919205,
+              "endTimeMs": 933139,
+              "markTimeMs": 0,
+              "type": "Unknown",
+              "isHome": false,
+              "isTeam1": false,
+              "name": "Unknown",
+              "attributes": [
+                {
+                  "key": "source",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                },
+                {
+                  "key": "type",
+                  "values": [
+                    "faceOff"
+                  ]
+                },
+                {
+                  "key": "result",
+                  "values": [
+                    "won"
+                  ]
+                },
+                {
+                  "key": "team",
+                  "values": [
+                    "1"
+                  ]
+                },
+                {
+                  "key": "originalStartTimeMs",
+                  "values": [
+                    "925205"
+                  ]
+                },
+                {
+                  "key": "originalEndTimeMs",
+                  "values": [
+                    "927139"
+                  ]
+                },
+                {
+                  "key": "zone",
+                  "values": [
+                    "defensive"
+                  ]
+                },
+                {
+                  "key": "playerUserIdTeam1",
+                  "values": [
+                    "17798210"
+                  ]
+                },
+                {
+                  "key": "playerUserIdTeam2",
+                  "values": [
+                    "21488635"
+                  ]
+                }
+              ]
+            },
+            {
+              "markId": "697a0d5bdf690ea4d09819d3",
+              "startTimeMs": 926346,
+              "endTimeMs": 936346,
+              "markTimeMs": 0,
+              "type": "Unknown",
+              "isHome": false,
+              "isTeam1": false,
+              "name": "Unknown",
+              "attributes": [
+                {
+                  "key": "source",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                },
+                {
+                  "key": "type",
+                  "values": [
+                    "shot"
+                  ]
+                },
+                {
+                  "key": "result",
+                  "values": [
+                    "saved"
+                  ]
+                },
+                {
+                  "key": "team",
+                  "values": [
+                    "1"
+                  ]
+                },
+                {
+                  "key": "originalStartTimeMs",
+                  "values": [
+                    "932346"
+                  ]
+                },
+                {
+                  "key": "playerJerseyTeam2",
+                  "values": [
+                    "35"
+                  ]
+                },
+                {
+                  "key": "playerUserId",
+                  "values": [
+                    "18390495"
+                  ]
+                },
+                {
+                  "key": "startLocationX",
+                  "values": [
+                    "-0.2518518518518519"
+                  ]
+                },
+                {
+                  "key": "startLocationY",
+                  "values": [
+                    "0.8231884057971015"
+                  ]
+                }
+              ]
+            },
+            {
+              "markId": "697a0d5bdf690ea4d09819d4",
+              "startTimeMs": 932635,
+              "endTimeMs": 940635,
+              "markTimeMs": 0,
+              "type": "Unknown",
+              "isHome": false,
+              "isTeam1": false,
+              "name": "Unknown",
+              "attributes": [
+                {
+                  "key": "source",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                },
+                {
+                  "key": "type",
+                  "values": [
+                    "outOfPlay"
+                  ]
+                },
+                {
+                  "key": "originalStartTimeMs",
+                  "values": [
+                    "936635"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "sequenceId": 19,
+          "controllingTeam": "2",
+          "zone": "defensive",
+          "startTimeMs": 938159,
+          "endTimeMs": 967926,
+          "outcome": "stoppage",
+          "actions": [
+            {
+              "markId": "697a0d5bdf690ea4d09819d5",
+              "startTimeMs": 938159,
+              "endTimeMs": 951359,
+              "markTimeMs": 0,
+              "type": "Unknown",
+              "isHome": false,
+              "isTeam1": false,
+              "name": "Unknown",
+              "attributes": [
+                {
+                  "key": "source",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                },
+                {
+                  "key": "type",
+                  "values": [
+                    "faceOff"
+                  ]
+                },
+                {
+                  "key": "result",
+                  "values": [
+                    "won"
+                  ]
+                },
+                {
+                  "key": "team",
+                  "values": [
+                    "2"
+                  ]
+                },
+                {
+                  "key": "originalStartTimeMs",
+                  "values": [
+                    "944159"
+                  ]
+                },
+                {
+                  "key": "originalEndTimeMs",
+                  "values": [
+                    "945359"
+                  ]
+                },
+                {
+                  "key": "zone",
+                  "values": [
+                    "defensive"
+                  ]
+                },
+                {
+                  "key": "playerUserIdTeam2",
+                  "values": [
+                    "18832519"
+                  ]
+                },
+                {
+                  "key": "playerUserIdTeam1",
+                  "values": [
+                    "17798210"
+                  ]
+                }
+              ]
+            },
+            {
+              "markId": "697a0d5bdf690ea4d09819d6",
+              "startTimeMs": 963009,
+              "endTimeMs": 971009,
+              "markTimeMs": 0,
+              "type": "Unknown",
+              "isHome": false,
+              "isTeam1": false,
+              "name": "Unknown",
+              "attributes": [
+                {
+                  "key": "source",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                },
+                {
+                  "key": "type",
+                  "values": [
+                    "outOfPlay"
+                  ]
+                },
+                {
+                  "key": "originalStartTimeMs",
+                  "values": [
+                    "967009"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "sequenceId": 20,
+          "controllingTeam": "1",
+          "zone": "offensive",
+          "startTimeMs": 967926,
+          "endTimeMs": 1053305,
+          "outcome": "stoppage",
+          "actions": [
+            {
+              "markId": "697a0d5bdf690ea4d09819d7",
+              "startTimeMs": 967926,
+              "endTimeMs": 981636,
+              "markTimeMs": 0,
+              "type": "Unknown",
+              "isHome": false,
+              "isTeam1": false,
+              "name": "Unknown",
+              "attributes": [
+                {
+                  "key": "source",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                },
+                {
+                  "key": "type",
+                  "values": [
+                    "faceOff"
+                  ]
+                },
+                {
+                  "key": "result",
+                  "values": [
+                    "won"
+                  ]
+                },
+                {
+                  "key": "team",
+                  "values": [
+                    "2"
+                  ]
+                },
+                {
+                  "key": "originalStartTimeMs",
+                  "values": [
+                    "973926"
+                  ]
+                },
+                {
+                  "key": "originalEndTimeMs",
+                  "values": [
+                    "975636"
+                  ]
+                },
+                {
+                  "key": "zone",
+                  "values": [
+                    "offensive"
+                  ]
+                },
+                {
+                  "key": "playerUserIdTeam2",
+                  "values": [
+                    "18832519"
+                  ]
+                },
+                {
+                  "key": "playerUserIdTeam1",
+                  "values": [
+                    "28847320"
+                  ]
+                }
+              ]
+            },
+            {
+              "markId": "697a0d5bdf690ea4d09819d8",
+              "startTimeMs": 1045478,
+              "endTimeMs": 1055478,
+              "markTimeMs": 0,
+              "type": "Unknown",
+              "isHome": false,
+              "isTeam1": false,
+              "name": "Unknown",
+              "attributes": [
+                {
+                  "key": "source",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                },
+                {
+                  "key": "type",
+                  "values": [
+                    "shot"
+                  ]
+                },
+                {
+                  "key": "result",
+                  "values": [
+                    "saved"
+                  ]
+                },
+                {
+                  "key": "team",
+                  "values": [
+                    "1"
+                  ]
+                },
+                {
+                  "key": "originalStartTimeMs",
+                  "values": [
+                    "1051478"
+                  ]
+                },
+                {
+                  "key": "playerJerseyTeam2",
+                  "values": [
+                    "35"
+                  ]
+                },
+                {
+                  "key": "playerUserId",
+                  "values": [
+                    "28791479"
+                  ]
+                },
+                {
+                  "key": "startLocationX",
+                  "values": [
+                    "0.6592592592592592"
+                  ]
+                },
+                {
+                  "key": "startLocationY",
+                  "values": [
+                    "0.7072463768115942"
+                  ]
+                }
+              ]
+            },
+            {
+              "markId": "697a0d5bdf690ea4d09819d9",
+              "startTimeMs": 1048947,
+              "endTimeMs": 1056947,
+              "markTimeMs": 0,
+              "type": "Unknown",
+              "isHome": false,
+              "isTeam1": false,
+              "name": "Unknown",
+              "attributes": [
+                {
+                  "key": "source",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                },
+                {
+                  "key": "type",
+                  "values": [
+                    "outOfPlay"
+                  ]
+                },
+                {
+                  "key": "originalStartTimeMs",
+                  "values": [
+                    "1052947"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "sequenceId": 21,
+          "controllingTeam": "1",
+          "zone": "offensive",
+          "startTimeMs": 1053305,
+          "endTimeMs": 1132629,
+          "outcome": "stoppage",
+          "actions": [
+            {
+              "markId": "697a0d5bdf690ea4d09819da",
+              "startTimeMs": 1053305,
+              "endTimeMs": 1068567,
+              "markTimeMs": 0,
+              "type": "Unknown",
+              "isHome": false,
+              "isTeam1": false,
+              "name": "Unknown",
+              "attributes": [
+                {
+                  "key": "source",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                },
+                {
+                  "key": "type",
+                  "values": [
+                    "faceOff"
+                  ]
+                },
+                {
+                  "key": "result",
+                  "values": [
+                    "won"
+                  ]
+                },
+                {
+                  "key": "team",
+                  "values": [
+                    "1"
+                  ]
+                },
+                {
+                  "key": "originalStartTimeMs",
+                  "values": [
+                    "1059305"
+                  ]
+                },
+                {
+                  "key": "originalEndTimeMs",
+                  "values": [
+                    "1062567"
+                  ]
+                },
+                {
+                  "key": "zone",
+                  "values": [
+                    "offensive"
+                  ]
+                },
+                {
+                  "key": "playerUserIdTeam1",
+                  "values": [
+                    "19287022"
+                  ]
+                },
+                {
+                  "key": "playerJerseyTeam2",
+                  "values": [
+                    "3"
+                  ]
+                }
+              ]
+            },
+            {
+              "markId": "697a0d5bdf690ea4d09819db",
+              "startTimeMs": 1109438,
+              "endTimeMs": 1117438,
+              "markTimeMs": 0,
+              "type": "Unknown",
+              "isHome": false,
+              "isTeam1": false,
+              "name": "Unknown",
+              "attributes": [
+                {
+                  "key": "source",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                },
+                {
+                  "key": "type",
+                  "values": [
+                    "infraction"
+                  ]
+                },
+                {
+                  "key": "subType",
+                  "values": [
+                    "icing"
+                  ]
+                },
+                {
+                  "key": "team",
+                  "values": [
+                    "2"
+                  ]
+                },
+                {
+                  "key": "originalStartTimeMs",
+                  "values": [
+                    "1113438"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "sequenceId": 22,
+          "controllingTeam": "2",
+          "zone": "defensive",
+          "startTimeMs": 1132629,
+          "endTimeMs": 1176229,
+          "outcome": "end_of_period",
+          "actions": [
+            {
+              "markId": "697a0d5bdf690ea4d09819dc",
+              "startTimeMs": 1132629,
+              "endTimeMs": 1146049,
+              "markTimeMs": 0,
+              "type": "Unknown",
+              "isHome": false,
+              "isTeam1": false,
+              "name": "Unknown",
+              "attributes": [
+                {
+                  "key": "source",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                },
+                {
+                  "key": "type",
+                  "values": [
+                    "faceOff"
+                  ]
+                },
+                {
+                  "key": "result",
+                  "values": [
+                    "won"
+                  ]
+                },
+                {
+                  "key": "team",
+                  "values": [
+                    "2"
+                  ]
+                },
+                {
+                  "key": "originalStartTimeMs",
+                  "values": [
+                    "1138629"
+                  ]
+                },
+                {
+                  "key": "originalEndTimeMs",
+                  "values": [
+                    "1140049"
+                  ]
+                },
+                {
+                  "key": "zone",
+                  "values": [
+                    "defensive"
+                  ]
+                },
+                {
+                  "key": "playerUserIdTeam2",
+                  "values": [
+                    "18832519"
+                  ]
+                },
+                {
+                  "key": "playerUserIdTeam1",
+                  "values": [
+                    "17798210"
+                  ]
+                }
+              ]
+            },
+            {
+              "markId": "697a0d5bdf690ea4d09819dd",
+              "startTimeMs": 1164705,
+              "endTimeMs": 1174705,
+              "markTimeMs": 0,
+              "type": "Unknown",
+              "isHome": false,
+              "isTeam1": false,
+              "name": "Unknown",
+              "attributes": [
+                {
+                  "key": "source",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                },
+                {
+                  "key": "type",
+                  "values": [
+                    "shot"
+                  ]
+                },
+                {
+                  "key": "result",
+                  "values": [
+                    "saved"
+                  ]
+                },
+                {
+                  "key": "team",
+                  "values": [
+                    "2"
+                  ]
+                },
+                {
+                  "key": "originalStartTimeMs",
+                  "values": [
+                    "1170705"
+                  ]
+                },
+                {
+                  "key": "playerUserIdTeam1",
+                  "values": [
+                    "28791083"
+                  ]
+                },
+                {
+                  "key": "playerUserId",
+                  "values": [
+                    "18967326"
+                  ]
+                },
+                {
+                  "key": "startLocationX",
+                  "values": [
+                    "0.14814814814814814"
+                  ]
+                },
+                {
+                  "key": "startLocationY",
+                  "values": [
+                    "0.8144927536231884"
+                  ]
+                }
+              ]
+            },
+            {
+              "markId": "697a0d5bdf690ea4d09819de",
+              "startTimeMs": 1166396,
+              "endTimeMs": 1176229,
+              "markTimeMs": 0,
+              "type": "Unknown",
+              "isHome": false,
+              "isTeam1": false,
+              "name": "Unknown",
+              "attributes": [
+                {
+                  "key": "source",
+                  "values": [
+                    "web",
+                    "videoTag",
+                    "assist"
+                  ]
+                },
+                {
+                  "key": "type",
+                  "values": [
+                    "shot"
+                  ]
+                },
+                {
+                  "key": "result",
+                  "values": [
+                    "saved"
+                  ]
+                },
+                {
+                  "key": "team",
+                  "values": [
+                    "2"
+                  ]
+                },
+                {
+                  "key": "originalStartTimeMs",
+                  "values": [
+                    "1172396"
+                  ]
+                },
+                {
+                  "key": "playerUserIdTeam1",
+                  "values": [
+                    "28791083"
+                  ]
+                },
+                {
+                  "key": "playerUserId",
+                  "values": [
+                    "18832512"
+                  ]
+                },
+                {
+                  "key": "startLocationX",
+                  "values": [
+                    "-0.029629629629629672"
+                  ]
+                },
+                {
+                  "key": "startLocationY",
+                  "values": [
+                    "0.8"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "taggingSettings": {
+    "settingsId": "697993f0cb6db9ed15b4f3ff",
+    "teamOne": {
+      "teamId": "44881",
+      "name": "Boys Varsity Ice Hockey",
+      "color": "blue",
+      "roster": [
+        {
+          "firstName": "Brady",
+          "lastName": "Femrite",
+          "jersey": "19",
+          "userId": "17798210"
+        },
+        {
+          "firstName": "Ryder",
+          "lastName": "Bible",
+          "jersey": "15",
+          "userId": "18390495"
+        },
+        {
+          "firstName": "AJ",
+          "lastName": "Hrodey",
+          "jersey": "22",
+          "userId": "19287022"
+        },
+        {
+          "firstName": "Kegan",
+          "lastName": "Bible",
+          "jersey": "6",
+          "userId": "20168024"
+        },
+        {
+          "firstName": "Emmett",
+          "lastName": "Reason",
+          "jersey": "16",
+          "userId": "20168042"
+        },
+        {
+          "firstName": "John",
+          "lastName": "Reitzell",
+          "jersey": "17",
+          "userId": "20319986"
+        },
+        {
+          "firstName": "Xander",
+          "lastName": "Gilbertson",
+          "jersey": "7",
+          "userId": "20379463"
+        },
+        {
+          "firstName": "Langdon",
+          "lastName": "Bett",
+          "jersey": "10",
+          "userId": "22055098"
+        },
+        {
+          "firstName": "Cole",
+          "lastName": "Schleis",
+          "jersey": "11",
+          "userId": "22784109"
+        },
+        {
+          "firstName": "Gavin",
+          "lastName": "Fermite",
+          "jersey": "2",
+          "userId": "24038701"
+        },
+        {
+          "firstName": "Stanley",
+          "lastName": "Payne",
+          "jersey": "13",
+          "userId": "28791022"
+        },
+        {
+          "firstName": "Jonathan",
+          "lastName": "Ivanov",
+          "jersey": "4",
+          "userId": "28791039"
+        },
+        {
+          "firstName": "Jack",
+          "lastName": "Schiefelbein",
+          "jersey": "21",
+          "userId": "28791054"
+        },
+        {
+          "firstName": "Ajay",
+          "lastName": "Motelet",
+          "jersey": "5",
+          "userId": "28791061"
+        },
+        {
+          "firstName": "Wyatt",
+          "lastName": "Godfrey",
+          "jersey": "1",
+          "userId": "28791083"
+        },
+        {
+          "firstName": "Kipp",
+          "lastName": "Hartman",
+          "jersey": "18",
+          "userId": "28791099"
+        },
+        {
+          "firstName": "Aidan",
+          "lastName": "Moriva",
+          "jersey": "8",
+          "userId": "28791158"
+        },
+        {
+          "firstName": "Quintin",
+          "lastName": "Greunke",
+          "jersey": "12",
+          "userId": "28791187"
+        },
+        {
+          "firstName": "Jack",
+          "lastName": "Hovde",
+          "jersey": "20",
+          "userId": "28791479"
+        },
+        {
+          "firstName": "Sully",
+          "lastName": "Groth",
+          "jersey": "9",
+          "userId": "28847320"
+        }
+      ],
+      "metadata": [
+        {
+          "key": "score",
+          "values": [
+            "5"
+          ]
+        },
+        {
+          "key": "startingGoalie",
+          "values": [
+            "1"
+          ]
+        },
+        {
+          "key": "playerStatsDontTrack",
+          "values": [
+            "attackLocations",
+            "additionalTags",
+            "zone",
+            "whoIsOnTheIce"
+          ]
+        },
+        {
+          "key": "trackLineup",
+          "values": [
+            "false"
+          ]
+        },
+        {
+          "key": "autoGoaliePlayer",
+          "values": [
+            "{\"userId\":\"28791083\",\"jersey\":null,\"unknown\":null,\"none\":null,\"team\":\"1\"}"
+          ]
+        }
+      ]
+    },
+    "teamTwo": {
+      "teamId": "255161",
+      "name": "Waunakee High School",
+      "color": "purple",
+      "roster": [
+        {
+          "firstName": "David",
+          "lastName": "Emerich",
+          "jersey": "2",
+          "userId": "17116623"
+        },
+        {
+          "jersey": "3"
+        },
+        {
+          "firstName": "Michael",
+          "lastName": "Gruetzmacher",
+          "jersey": "4",
+          "userId": "18967326"
+        },
+        {
+          "jersey": "5"
+        },
+        {
+          "firstName": "Keegan",
+          "lastName": "Jacobson",
+          "jersey": "6",
+          "userId": "18966579"
+        },
+        {
+          "firstName": "Noah",
+          "lastName": "Nadler",
+          "jersey": "7",
+          "userId": "18966582"
+        },
+        {
+          "firstName": "Cash",
+          "lastName": "Eller",
+          "jersey": "8",
+          "userId": "18832517"
+        },
+        {
+          "firstName": "Jack",
+          "lastName": "Dull",
+          "jersey": "9",
+          "userId": "18832519"
+        },
+        {
+          "firstName": "Adrian",
+          "lastName": "Millin",
+          "jersey": "10",
+          "userId": "17559210"
+        },
+        {
+          "firstName": "Reiss",
+          "lastName": "Hermanson",
+          "jersey": "11",
+          "userId": "18832509"
+        },
+        {
+          "firstName": "Allison",
+          "lastName": "Carter",
+          "jersey": "12",
+          "userId": "18462739"
+        },
+        {
+          "firstName": "Aiden",
+          "lastName": "Dunlap",
+          "jersey": "14",
+          "userId": "21488632"
+        },
+        {
+          "jersey": "16"
+        },
+        {
+          "firstName": "Calvin",
+          "lastName": "Behnke",
+          "jersey": "17",
+          "userId": "18832512"
+        },
+        {
+          "firstName": "Ethan",
+          "lastName": "Evans",
+          "jersey": "18",
+          "userId": "17188477"
+        },
+        {
+          "firstName": "Max",
+          "lastName": "Rucker",
+          "jersey": "19",
+          "userId": "16850496"
+        },
+        {
+          "firstName": "Sully",
+          "lastName": "Scadden",
+          "jersey": "20",
+          "userId": "16024760"
+        },
+        {
+          "firstName": "Sam",
+          "lastName": "Cutrano",
+          "jersey": "21",
+          "userId": "21535558"
+        },
+        {
+          "firstName": "Charlie",
+          "lastName": "Kossen",
+          "jersey": "22",
+          "userId": "18832523"
+        },
+        {
+          "firstName": "Bode",
+          "lastName": "Hermanson",
+          "jersey": "24",
+          "userId": "21488653"
+        },
+        {
+          "firstName": "Devin",
+          "lastName": "Hoffman",
+          "jersey": "25",
+          "userId": "18832515"
+        },
+        {
+          "firstName": "Gabe",
+          "lastName": "Samuelson",
+          "jersey": "26",
+          "userId": "21488631"
+        },
+        {
+          "firstName": "Jaxon",
+          "lastName": "Beck",
+          "jersey": "27",
+          "userId": "15897026"
+        },
+        {
+          "firstName": "Owen",
+          "lastName": "Benedict",
+          "jersey": "28",
+          "userId": "21488635"
+        },
+        {
+          "firstName": "Owen",
+          "lastName": "Schramm",
+          "jersey": "29",
+          "userId": "21488655"
+        },
+        {
+          "firstName": "Steven",
+          "lastName": "Werner",
+          "jersey": "31",
+          "userId": "21533592"
+        },
+        {
+          "firstName": "Garrett",
+          "lastName": "Hoffman",
+          "jersey": "32",
+          "userId": "15728747"
+        },
+        {
+          "firstName": "George",
+          "lastName": "Myer",
+          "jersey": "33",
+          "userId": "21488611"
+        },
+        {
+          "jersey": "35"
+        },
+        {
+          "firstName": "Levente",
+          "lastName": "Banyai",
+          "jersey": "52",
+          "userId": "21488695"
+        },
+        {
+          "firstName": "Eli",
+          "lastName": "Endres",
+          "jersey": "55",
+          "userId": "15985898"
+        },
+        {
+          "firstName": "Brock",
+          "lastName": "Robbins",
+          "jersey": "72",
+          "userId": "21517184"
+        },
+        {
+          "firstName": "Peter",
+          "lastName": "Berg",
+          "jersey": "77",
+          "userId": "21488624"
+        },
+        {
+          "firstName": "Cade",
+          "lastName": "Burcalow",
+          "jersey": "88",
+          "userId": "21488626"
+        },
+        {
+          "firstName": "Nathan",
+          "lastName": "Hansen",
+          "jersey": "96",
+          "userId": "15985912"
+        }
+      ],
+      "metadata": [
+        {
+          "key": "score",
+          "values": [
+            "2"
+          ]
+        },
+        {
+          "key": "playerStatsDontTrack",
+          "values": [
+            "attackLocations",
+            "additionalTags",
+            "zone",
+            "whoIsOnTheIce"
+          ]
+        },
+        {
+          "key": "trackLineup",
+          "values": [
+            "false"
+          ]
+        },
+        {
+          "key": "autoGoaliePlayer",
+          "values": [
+            "{\"userId\":null,\"jersey\":\"35\",\"unknown\":null,\"none\":null,\"team\":\"2\"}"
+          ]
+        }
+      ]
+    },
+    "metadata": [
+      {
+        "key": "useHalves",
+        "values": [
+          "false"
+        ]
+      }
+    ],
+    "dateUpdated": "2026-01-28T10:32:53.835Z"
+  }
+}
