@@ -1,0 +1,13 @@
+{
+  "enabledPlugins": {
+    "ux-dna@hudl": true
+  },
+  "extraKnownMarketplaces": {
+    "hudl": {
+      "source": {
+        "source": "git",
+        "url": "git@github.com:hudl/agent-marketplace.git"
+      }
+    }
+  }
+}

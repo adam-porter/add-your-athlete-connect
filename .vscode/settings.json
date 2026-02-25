@@ -1,7 +1,0 @@
-{
-  "claudeCode.environmentVariables": [
-    { "name": "CLAUDE_CODE_USE_BEDROCK", "value": "1" },
-    { "name": "AWS_PROFILE", "value": "YOUR_SANDBOX_PROFILE_NAME" },
-    { "name": "AWS_REGION", "value": "us-east-1" }
-  ]
-}
