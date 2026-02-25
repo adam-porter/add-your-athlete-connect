@@ -8,6 +8,12 @@ Build interactive prototypes using Hudl's design system. No coding experience ne
 
 **Connect to the Hudl VPN** - You need this the first time you set up the project.
 
+**Install the Hudl Claude marketplace** - This repo uses the `ux-dna` plugin from the Hudl agent marketplace. Claude Code will prompt you to install it when you open the project, or you can install it manually:
+```
+/plugin marketplace add git@github.com:hudl/agent-marketplace.git
+```
+Once the marketplace is installed, the `ux-dna` plugin will be enabled automatically.
+
 ## Starting a New Prototype
 
 1. **Open this folder in Claude Desktop**
