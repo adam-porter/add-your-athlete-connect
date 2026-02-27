@@ -30,9 +30,14 @@ Start a new prototype with a fresh git branch and development environment.
 
 7. **Start dev server** - Run `npm run dev` in the background
 
-8. **Confirm ready** - Tell the user:
+8. **Run a UX DNA briefing** - Before handing off to the user, consult the `ux-dna:content-advisor` agent
+   - Ask it: "What guidelines, voice rules, and UX patterns should I keep in mind when building a [prototype name] prototype?"
+   - Share the key highlights with the user as part of the ready confirmation — this primes both Claude and the user with relevant standards before any code is written
+
+9. **Confirm ready** - Tell the user:
    - Branch name created
    - Dev server running at the URL
+   - Key UX DNA guidelines that apply to this prototype (from step 8)
    - Ready to start building their prototype
    - Remind them to use `/save-prototype` when done
 
@@ -40,3 +45,4 @@ Start a new prototype with a fresh git branch and development environment.
 - Always verify we're starting from a clean main/master branch
 - Use descriptive branch names with "prototype/" prefix
 - Don't force any operations - ask user if there are conflicts
+- The UX DNA briefing in step 8 is not optional — it ensures every prototype starts with the right standards loaded

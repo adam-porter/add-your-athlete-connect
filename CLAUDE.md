@@ -2,6 +2,29 @@
 
 This is a prototyping template repository. Each prototype lives on its own git branch.
 
+## UX DNA — Always On
+
+**The `ux-dna` plugin is a core part of how you work in this repo, not an optional add-on.**
+
+The plugin's primary agent is `ux-dna:content-advisor`. Consult it proactively throughout the prototyping process:
+
+- **Before designing** — ask it what guidelines, patterns, or voice rules apply to what you're building
+- **While writing copy** — use `ux-dna:copy-writer` to generate compliant UI text, or `ux-dna:copy-reviewer` to check existing copy
+- **Before finishing** — use `ux-dna:ux-reviewer` to catch heuristic and accessibility issues before the work is saved
+- **When in doubt** — ask `ux-dna:content-advisor` any question about Hudl's standards
+
+**Don't wait to be asked.** If you're building a form, run the copy through the reviewer. If you're designing an empty state, ask the advisor for the pattern. If you're about to save, run a UX review first. The plugin exists to make every prototype better and more consistent — use it.
+
+Available ux-dna skills you can invoke directly:
+- `ux-dna:content-advisor` — look up guidelines, voice rules, and content patterns
+- `ux-dna:copy-writer` — generate compliant UI copy for a component and context
+- `ux-dna:copy-reviewer` — review copy against Hudl's content rules
+- `ux-dna:ux-reviewer` — heuristic + accessibility critique of a screen or component
+- `ux-dna:check-heuristics` — apply Hudl's 10 UX heuristics to a design
+- `ux-dna:check-accessibility` — apply Hudl's WCAG 2.2-aligned accessibility rules
+
+---
+
 ## Workflow
 
 **Starting a new prototype:**
