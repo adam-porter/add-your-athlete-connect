@@ -30,7 +30,7 @@ Start a new prototype with a fresh git branch and development environment.
 
 7. **Start dev server** - Run `npm run dev` in the background
 
-8. **Run a UX DNA briefing** - Before handing off to the user, consult the `ux-dna:content-advisor` agent
+8. **Run a UX DNA briefing** - Before handing off to the user, consult the `ux-dna:advisor` agent
    - Ask it: "What guidelines, voice rules, and UX patterns should I keep in mind when building a [prototype name] prototype?"
    - Share the key highlights with the user as part of the ready confirmation — this primes both Claude and the user with relevant standards before any code is written
 
