@@ -6,21 +6,9 @@ This is a prototyping template repository. Each prototype lives on its own git b
 
 **The `ux-dna` plugin is a core part of how you work in this repo, not an optional add-on.**
 
-The plugin's primary agent is `ux-dna:advisor`. Start there for any UX or design question — it answers guidelines questions, helps scope what needs to be built, and routes to the right agent when the work is bigger than a question.
+The plugin's primary agent is `ux-dna:advisor`. It's the single entry point — use it for any UX or design question, at any point in the process. It answers guidelines questions, helps scope what needs to be built, and knows when and how to invoke the rest of the plugin's capabilities.
 
-- **Before designing** — ask `ux-dna:advisor` what guidelines, patterns, or voice rules apply to what you're building
-- **While writing copy** — use `ux-dna:writer` to generate compliant UI text, or `ux-dna:reviewer` to check existing copy
-- **Before finishing** — use `ux-dna:reviewer` to catch heuristic and accessibility issues before the work is saved
-- **When in doubt** — ask `ux-dna:advisor` anything; it knows when to hand off to reviewer or writer
-
-**Don't wait to be asked.** If you're building a form, run the copy through the reviewer. If you're designing an empty state, ask the advisor for the pattern. If you're about to save, run a review first. The plugin exists to make every prototype better and more consistent — use it.
-
-Available ux-dna agents and skills:
-- `ux-dna:advisor` — start here; answers any UX/design question, scopes problems, routes to other agents
-- `ux-dna:writer` — generate compliant UI copy for a component and context
-- `ux-dna:reviewer` — heuristic, accessibility, and content critique of any design artifact
-- `ux-dna:check-heuristics` — apply Hudl's 10 UX heuristics to a design
-- `ux-dna:check-accessibility` — apply Hudl's WCAG 2.2-aligned accessibility rules
+**Don't wait to be asked.** Before designing, ask what applies. While building, ask about patterns and copy. Before saving, ask for a review. When in doubt, ask. The advisor handles routing — you don't need to know what else the plugin contains.
 
 ---
 

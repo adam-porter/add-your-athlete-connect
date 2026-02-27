@@ -8,7 +8,7 @@ Save the current prototype by committing changes and pushing to GitHub.
 
 **Workflow:**
 
-1. **Run a UX DNA review** - Before saving, use `ux-dna:reviewer` to evaluate the current state of the prototype
+1. **Run a UX DNA review** - Before saving, ask `ux-dna:advisor` to review the current state of the prototype
    - Describe the key screens and interactions that have been built
    - Share the review results with the user: what's passing, what concerns exist, what's failing
    - If there are **Fail**-level issues, highlight them clearly and ask if the user wants to fix them before saving, or save anyway
