@@ -1,0 +1,489 @@
+import React, { useState, useEffect } from 'react'
+import { Text, Title, Checkbox } from '@hudl/uniform-web'
+import { Elements, PaymentElement, useStripe, useElements } from '@stripe/react-stripe-js'
+import { loadStripe, StripeElementsOptions } from '@stripe/stripe-js'
+import { RegistrationStep } from './RegistrationStep'
+import { STRIPE_PUBLISHABLE_KEY } from '../config/stripe'
+
+// Load Stripe
+const stripePromise = loadStripe(STRIPE_PUBLISHABLE_KEY)
+
+// Reusable section component for checkout page
+interface CheckoutSectionProps {
+  title: string
+  children: React.ReactNode
+}
+
+function CheckoutSection({ title, children }: CheckoutSectionProps) {
+  return (
+    <div style={{
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 'var(--u-space-one-and-quarter)',
+    }}>
+      <div style={{ fontSize: 'var(--u-font-size-text-large)', fontWeight: 700, color: 'var(--u-color-base-foreground)' }}>
+        {title}
+      </div>
+      {children}
+    </div>
+  )
+}
+
+interface CheckoutProps {
+  athleteName: string
+  programName: string
+  programPrice: number
+  depositAmount: number
+  showedSelectAthlete: boolean
+  onBack: () => void
+  onComplete: () => void
+}
+
+// Payment form component that uses Stripe hooks
+function CheckoutForm({
+  athleteName,
+  programName,
+  programPrice,
+  depositAmount,
+  showedSelectAthlete,
+  onBack,
+  onComplete
+}: CheckoutProps) {
+  const stripe = useStripe()
+  const elements = useElements()
+  const [isProcessing, setIsProcessing] = useState(false)
+  const [errorMessage, setErrorMessage] = useState<string | null>(null)
+
+  const transactionFee = Math.round((depositAmount * 0.029 + 0.30) * 100) / 100
+  const totalDueToday = depositAmount + transactionFee
+
+  const isValid = stripe && elements
+
+  const handleContinue = async () => {
+    if (!isValid) return
+
+    setIsProcessing(true)
+    setErrorMessage(null)
+
+    try {
+      // For this prototype, we'll simulate payment processing
+      // In production, you would use Stripe's API to process the payment
+
+      // Simulate processing delay
+      await new Promise(resolve => setTimeout(resolve, 1500))
+
+      // Complete the registration
+      onComplete()
+    } catch (error) {
+      setErrorMessage('Payment processing failed. Please try again.')
+      setIsProcessing(false)
+    }
+  }
+
+  return (
+    <RegistrationStep
+      title="Checkout"
+      description="Review your registration and complete payment."
+      onBack={onBack}
+      onContinue={handleContinue}
+      continueLabel={isProcessing ? 'Processing...' : 'Complete Registration'}
+      continueDisabled={!isValid || isProcessing}
+      currentStep={showedSelectAthlete ? 3 : 2}
+      totalSteps={showedSelectAthlete ? 3 : 2}
+    >
+      <div style={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 'var(--u-space-three)',
+        maxWidth: '1200px',
+        paddingBottom: 'var(--u-space-four)',
+      }}>
+        {/* Section 1: Registration Summary */}
+        <CheckoutSection title="Registration Summary">
+          <div style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 'var(--u-space-half)',
+          }}>
+            {/* Table Headers */}
+            <div style={{
+              display: 'flex',
+              gap: 'var(--u-space-one-and-half)',
+            }}>
+              <div style={{
+                flex: 1,
+                display: 'flex',
+                gap: 'var(--u-space-three-quarter)',
+              }}>
+                <div style={{ flex: 1 }}>
+                  <Text size="xsmall" weight="bold" style={{ textTransform: 'uppercase' }}>
+                    Registration
+                  </Text>
+                </div>
+                <div style={{ flex: 1 }}>
+                  <Text size="xsmall" weight="bold" style={{ textTransform: 'uppercase' }}>
+                    Payment Option
+                  </Text>
+                </div>
+              </div>
+            </div>
+
+            {/* Registration Item */}
+            <div style={{
+              display: 'flex',
+              gap: 'var(--u-space-one-and-half)',
+              alignItems: 'center',
+            }}>
+              <div style={{
+                flex: 1,
+                display: 'flex',
+                gap: 'var(--u-space-one-and-quarter)',
+              }}>
+                {/* Athlete & Program Info */}
+                <div style={{
+                  flex: 1,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: 'var(--u-space-eighth)',
+                }}>
+                  <div style={{ minHeight: '24px', display: 'flex', alignItems: 'center' }}>
+                    <Text weight="bold" color="contrast">{athleteName}</Text>
+                  </div>
+                  <div style={{
+                    display: 'flex',
+                    gap: 'var(--u-space-half)',
+                    alignItems: 'center',
+                  }}>
+                    <Text>{programName}</Text>
+                  </div>
+                </div>
+
+                {/* Payment Option Info */}
+                <div style={{
+                  flex: 1,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: 'var(--u-space-eighth)',
+                }}>
+                  <div style={{
+                    display: 'flex',
+                    gap: 'var(--u-space-half)',
+                    alignItems: 'center',
+                    minHeight: '24px',
+                  }}>
+                    <Text weight="bold" color="contrast">Full Payment</Text>
+                  </div>
+                  <div style={{
+                    display: 'flex',
+                    gap: 'var(--u-space-half)',
+                    alignItems: 'center',
+                  }}>
+                    <Text>Registration Price: ${programPrice.toFixed(2)}</Text>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </CheckoutSection>
+
+        {/* Section 2: Payment Summary */}
+        <CheckoutSection title="Payment Summary">
+          <div style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 'var(--u-space-one)',
+          }}>
+            {/* Registration Total */}
+            <div style={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 'var(--u-space-quarter)',
+            }}>
+              <div style={{
+                display: 'flex',
+                gap: 'var(--u-space-four)',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+              }}>
+                <Text weight="default">Registration Total</Text>
+                <Text weight="default" style={{ fontFeatureSettings: "'tnum' 1" }}>
+                  ${programPrice.toFixed(2)}
+                </Text>
+              </div>
+            </div>
+
+            {/* Divider */}
+            <div style={{
+              height: '1px',
+              borderTop: '1px dashed var(--u-color-line-subtle)',
+              width: '100%',
+            }} />
+
+            {/* Due Today & Transaction Fee */}
+            <div style={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 'var(--u-space-quarter)',
+            }}>
+              <div style={{
+                display: 'flex',
+                gap: 'var(--u-space-four)',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+              }}>
+                <Text>Due Today</Text>
+                <Text style={{ fontFeatureSettings: "'tnum' 1" }}>
+                  ${depositAmount.toFixed(2)}
+                </Text>
+              </div>
+              <div style={{
+                display: 'flex',
+                gap: 'var(--u-space-four)',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+              }}>
+                <Text>Transaction Fee</Text>
+                <Text style={{ fontFeatureSettings: "'tnum' 1" }}>
+                  ${transactionFee.toFixed(2)}
+                </Text>
+              </div>
+            </div>
+
+            {/* Divider */}
+            <div style={{
+              height: '1px',
+              borderTop: '1px dashed var(--u-color-line-subtle)',
+              width: '100%',
+            }} />
+
+            {/* Total Due Today */}
+            <div style={{
+              display: 'flex',
+              gap: 'var(--u-space-four)',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+            }}>
+              <Title as="h4" size="default">Total Due Today</Title>
+              <Title as="h4" size="default" style={{ fontFeatureSettings: "'tnum' 1" }}>
+                ${totalDueToday.toFixed(2)}
+              </Title>
+            </div>
+          </div>
+        </CheckoutSection>
+
+        {/* Section 3: Payment Method */}
+        <CheckoutSection title="Payment Method">
+          {/* Stripe Payment Element */}
+          <PaymentElement />
+
+          {errorMessage && (
+            <div style={{
+              padding: 'var(--u-space-one)',
+              backgroundColor: 'var(--u-color-alert-background)',
+              borderRadius: 'var(--u-border-radius-large)',
+              border: '1px solid var(--u-color-alert-background-contrast)',
+            }}>
+              <Text size="small" style={{ color: 'var(--u-color-alert-foreground)' }}>
+                {errorMessage}
+              </Text>
+            </div>
+          )}
+        </CheckoutSection>
+      </div>
+    </RegistrationStep>
+  )
+}
+
+// Main Checkout component with Stripe Elements wrapper
+export function Checkout(props: CheckoutProps) {
+  const { depositAmount } = props
+  const [stripeOptions, setStripeOptions] = useState<StripeElementsOptions | null>(null)
+
+  useEffect(() => {
+    // Extract computed CSS variable values for Stripe (doesn't support CSS variables directly)
+    const styles = getComputedStyle(document.documentElement)
+    const canvasBackground = styles.getPropertyValue('--u-color-background-canvas').trim()
+    const containerBackground = styles.getPropertyValue('--u-color-background-container').trim()
+    const textColor = styles.getPropertyValue('--u-color-base-foreground').trim()
+    const textContrast = styles.getPropertyValue('--u-color-base-foreground-contrast').trim()
+    const textSubtle = styles.getPropertyValue('--u-color-base-foreground-subtle').trim()
+    const borderColor = styles.getPropertyValue('--u-color-line').trim()
+    const emphasisColor = styles.getPropertyValue('--u-color-emphasis-foreground').trim()
+    const errorColor = styles.getPropertyValue('--u-color-alert-foreground').trim()
+    const hoverBg = styles.getPropertyValue('--u-color-base-background-hover').trim()
+
+    // Stripe Elements options with Appearance API configured for Uniform
+    const options: StripeElementsOptions = {
+      mode: 'payment',
+      amount: Math.round(depositAmount * 100), // Convert to cents
+      currency: 'usd',
+      layout: 'tabs',
+      appearance: {
+        theme: 'night',
+        variables: {
+          colorPrimary: emphasisColor,
+          colorBackground: 'lightgray', // Changed to red for demonstration
+          colorText: textContrast,
+          colorDanger: errorColor,
+          fontFamily: 'Barlow, -apple-system, BlinkMacSystemFont, sans-serif',
+          fontSizeBase: '16px',
+          spacingUnit: '4px',
+          borderRadius: '4px',
+          colorTextSecondary: textColor,
+          colorTextPlaceholder: textSubtle,
+        },
+        rules: {
+          '.Input': {
+            backgroundColor: 'lightgray', // Changed to red for demonstration
+            border: `1px solid ${borderColor}`,
+            boxShadow: 'none',
+            padding: '12px 16px',
+            color: textContrast,
+          },
+          '.Input:hover': {
+            border: `1px solid ${textColor}`,
+          },
+          '.Input:focus': {
+            border: `1px solid ${emphasisColor}`,
+            boxShadow: 'none',
+          },
+          '.Input--invalid': {
+            border: `1px solid ${errorColor}`,
+            boxShadow: 'none',
+          },
+          '.Label': {
+            color: textContrast,
+            fontWeight: '400',
+            marginBottom: '8px',
+          },
+          '.Tab': {
+            backgroundColor: canvasBackground,
+            border: `1px solid ${borderColor}`,
+            boxShadow: 'none',
+          },
+          '.Tab:hover': {
+            backgroundColor: hoverBg,
+            border: `1px solid ${textColor}`,
+            boxShadow: 'none',
+          },
+          '.Tab--selected': {
+            backgroundColor: canvasBackground,
+            border: `2px solid ${emphasisColor}`,
+            boxShadow: 'none',
+          },
+          '.TabLabel': {
+            color: textContrast,
+          },
+          '.TabIcon': {
+            fill: textContrast,
+          },
+        },
+      },
+    }
+
+    setStripeOptions(options)
+
+    // Set up MutationObserver to watch for theme changes
+    const observer = new MutationObserver(() => {
+      // Re-extract CSS variables when theme changes
+      const newStyles = getComputedStyle(document.documentElement)
+      const newCanvasBackground = newStyles.getPropertyValue('--u-color-background-canvas').trim()
+      const newContainerBackground = newStyles.getPropertyValue('--u-color-background-container').trim()
+      const newTextColor = newStyles.getPropertyValue('--u-color-base-foreground').trim()
+      const newTextContrast = newStyles.getPropertyValue('--u-color-base-foreground-contrast').trim()
+      const newTextSubtle = newStyles.getPropertyValue('--u-color-base-foreground-subtle').trim()
+      const newBorderColor = newStyles.getPropertyValue('--u-color-line').trim()
+      const newEmphasisColor = newStyles.getPropertyValue('--u-color-emphasis-foreground').trim()
+      const newErrorColor = newStyles.getPropertyValue('--u-color-alert-foreground').trim()
+      const newHoverBg = newStyles.getPropertyValue('--u-color-base-background-hover').trim()
+
+      const newOptions: StripeElementsOptions = {
+        mode: 'payment',
+        amount: Math.round(depositAmount * 100),
+        currency: 'usd',
+        layout: 'tabs',
+        appearance: {
+          theme: 'night',
+          variables: {
+            colorPrimary: newEmphasisColor,
+            colorBackground: newCanvasBackground,
+            colorText: newTextContrast,
+            colorDanger: newErrorColor,
+            fontFamily: 'Barlow, -apple-system, BlinkMacSystemFont, sans-serif',
+            fontSizeBase: '16px',
+            spacingUnit: '4px',
+            borderRadius: '4px',
+            colorTextSecondary: newTextColor,
+            colorTextPlaceholder: newTextSubtle,
+          },
+          rules: {
+            '.Input': {
+              backgroundColor: newCanvasBackground,
+              border: `1px solid ${newBorderColor}`,
+              boxShadow: 'none',
+              padding: '12px 16px',
+              color: newTextContrast,
+            },
+            '.Input:hover': {
+              border: `1px solid ${newTextColor}`,
+            },
+            '.Input:focus': {
+              border: `1px solid ${newEmphasisColor}`,
+              boxShadow: 'none',
+            },
+            '.Input--invalid': {
+              border: `1px solid ${newErrorColor}`,
+              boxShadow: 'none',
+            },
+            '.Label': {
+              color: newTextContrast,
+              fontWeight: '400',
+              marginBottom: '8px',
+            },
+            '.Tab': {
+              backgroundColor: newCanvasBackground,
+              border: `1px solid ${newBorderColor}`,
+              boxShadow: 'none',
+            },
+            '.Tab:hover': {
+              backgroundColor: newHoverBg,
+              border: `1px solid ${newTextColor}`,
+              boxShadow: 'none',
+            },
+            '.Tab--selected': {
+              backgroundColor: newCanvasBackground,
+              border: `2px solid ${newEmphasisColor}`,
+              boxShadow: 'none',
+            },
+            '.TabLabel': {
+              color: newTextContrast,
+            },
+            '.TabIcon': {
+              fill: newTextContrast,
+            },
+          },
+        },
+      }
+
+      setStripeOptions(newOptions)
+    })
+
+    // Watch for changes to the html element's attributes (where Uniform sets theme)
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['data-theme', 'class'],
+    })
+
+    return () => observer.disconnect()
+  }, [depositAmount])
+
+  if (!stripeOptions) {
+    return null // Wait for options to be computed
+  }
+
+  return (
+    <Elements stripe={stripePromise} options={stripeOptions}>
+      <CheckoutForm {...props} />
+    </Elements>
+  )
+}

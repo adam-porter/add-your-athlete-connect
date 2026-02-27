@@ -2,14 +2,16 @@ import { useState } from 'react'
 import { Button, Input, Text, Lead } from '@hudl/uniform-web'
 import hudlLogo from '../images/logo/hudl-logo 3.svg'
 
-interface LoginStepTwoProps {
+interface CreateAccountStepTwoProps {
+  firstName: string
+  lastName: string
+  email: string
   onEditEmail: () => void
   onContinue: () => void
-  onCreateAccount: () => void
+  onLogIn: () => void
 }
 
-export function LoginStepTwo({ onEditEmail, onContinue, onCreateAccount }: LoginStepTwoProps) {
-  const [email] = useState('adam.porter@hudl.com')
+export function CreateAccountStepTwo({ firstName, lastName, email, onEditEmail, onContinue, onLogIn }: CreateAccountStepTwoProps) {
   const [password, setPassword] = useState('')
 
   return (
@@ -36,7 +38,7 @@ export function LoginStepTwo({ onEditEmail, onContinue, onCreateAccount }: Login
         <img src={hudlLogo} alt="Hudl" height="44" />
 
         <Lead as="h2" size="small">
-          Log In
+          Create Account
         </Lead>
 
         <div style={{
@@ -84,17 +86,8 @@ export function LoginStepTwo({ onEditEmail, onContinue, onCreateAccount }: Login
             </div>
           </div>
 
-          <a href="#" style={{
-            color: 'var(--u-color-emphasis-foreground)',
-            textDecoration: 'none',
-            fontSize: 'var(--u-font-size-text-small)',
-            fontFamily: 'var(--u-font-body)',
-          }}>
-            Forgot Password?
-          </a>
-
           <Button buttonType="primary" size="medium" isBlock onPress={onContinue}>
-            Continue
+            Create Account
           </Button>
 
           <div style={{
@@ -104,13 +97,13 @@ export function LoginStepTwo({ onEditEmail, onContinue, onCreateAccount }: Login
             lineHeight: 1.4,
             textAlign: 'center',
           }}>
-            Don't have an account?{' '}
-            <a href="#" onClick={(e) => { e.preventDefault(); onCreateAccount(); }} style={{
+            Already have an account?{' '}
+            <a href="#" onClick={(e) => { e.preventDefault(); onLogIn(); }} style={{
               color: 'var(--u-color-emphasis-foreground)',
               textDecoration: 'none',
               cursor: 'pointer',
             }}>
-              Create Account
+              Log In
             </a>
           </div>
         </div>

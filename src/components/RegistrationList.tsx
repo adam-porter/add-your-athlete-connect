@@ -2,17 +2,24 @@ import { Title } from '@hudl/uniform-web'
 import { RegistrationCard } from './RegistrationCard'
 import { getEligibleAthletes } from '../utils/eligibility'
 import { registrations } from '../data/registrations'
+import { useUser } from '../contexts/UserContext'
 
 interface RegistrationListProps {
   isLoggedIn: boolean
+  onRegister?: (registrationId: string) => void
 }
 
-export function RegistrationList({ isLoggedIn }: RegistrationListProps) {
+export function RegistrationList({ isLoggedIn, onRegister }: RegistrationListProps) {
+  const { userData } = useUser()
+
+  // Get user's athletes for eligibility checking
+  const userAthletes = userData?.athletes || []
+
   // Sort registrations: those with eligible athletes first
   const sortedRegistrations = isLoggedIn
     ? [...registrations].sort((a, b) => {
-        const aHasEligible = getEligibleAthletes(a).length > 0
-        const bHasEligible = getEligibleAthletes(b).length > 0
+        const aHasEligible = getEligibleAthletes(a, userAthletes).length > 0
+        const bHasEligible = getEligibleAthletes(b, userAthletes).length > 0
         if (aHasEligible && !bHasEligible) return -1
         if (!aHasEligible && bHasEligible) return 1
         return 0
@@ -34,7 +41,13 @@ export function RegistrationList({ isLoggedIn }: RegistrationListProps) {
         Registrations
       </div>
       {sortedRegistrations.map(reg => (
-        <RegistrationCard key={reg.id} registration={reg} isLoggedIn={isLoggedIn} />
+        <RegistrationCard
+          key={reg.id}
+          registration={reg}
+          isLoggedIn={isLoggedIn}
+          userAthletes={userAthletes}
+          onRegister={onRegister}
+        />
       ))}
     </div>
   )

@@ -2,22 +2,48 @@ import React, { useState } from 'react'
 import { Environment, Title, Text, Button, Note, AvatarTeam, AvatarUser } from '@hudl/uniform-web'
 import { IconUiExpandCollapseDown } from '@hudl/uniform-web-icons'
 import { TooltipProvider } from '@hudl/uniform-web-tooltip'
+import { PortalProvider } from '@hudl/uniform-web-portal'
 import hudlLogo from './images/logo/hudl-logo 3.svg'
 import { RegistrationList } from './components/RegistrationList'
 import { MyAthletes } from './components/MyAthletes'
 import { LoginStepOne } from './components/LoginStepOne'
 import { LoginStepTwo } from './components/LoginStepTwo'
+import { CreateAccountStepOne } from './components/CreateAccountStepOne'
+import { CreateAccountStepTwo } from './components/CreateAccountStepTwo'
 import { AddAthlete } from './components/AddAthlete'
+import { SelectAthlete } from './components/SelectAthlete'
+import { Questions } from './components/Questions'
+import { Checkout } from './components/Checkout'
+import ConfirmationScreen from './components/ConfirmationScreen'
+import { UserProvider, useUser } from './contexts/UserContext'
+import { registrations } from './data/registrations'
+import { getEligibleAthletes } from './utils/eligibility'
 import type { Theme } from './types'
 
-const PROGRAM_DESCRIPTION = `Get ready for the season with our Sporting Stripes & Stars Summer Camp! Open to athletes ages U9–U18, this multi-day camp is designed to assess player skills in a competitive and supportive environment. Coaches will use these sessions to inform placements ahead of official tryouts. Athletes will receive high-quality instruction, live gameplay reps, and feedback from experienced coaching staff. Whether you're aiming for a top team or just want to sharpen your skills, this is the place to start.`
+const PROGRAM_DESCRIPTION = `Competitive tryouts for the 2025-26 USA Volleyball club season. Open to athletes ages 12U through 18U, these single-day evaluations are designed to assess player skills in a competitive environment. Coaches will evaluate technical skills, court awareness, and team dynamics to determine roster placements. All skill levels welcome—come ready to compete and showcase your abilities. Age eligibility is determined as of August 31, 2026.`
 
 // ---------------------------------------------------------------------------
 // NavBar
 // ---------------------------------------------------------------------------
 
-function NavBar({ theme, onToggleTheme, onLogin, isLoggedIn }: { theme: Theme; onToggleTheme: () => void; onLogin: () => void; isLoggedIn: boolean }) {
+function NavBar({ theme, onToggleTheme, onLogin, onCreateAccount, onLogout, isLoggedIn, userData }: { theme: Theme; onToggleTheme: () => void; onLogin: () => void; onCreateAccount: () => void; onLogout: () => void; isLoggedIn: boolean; userData: { firstName: string; lastName: string; email: string; athletes: any[] } | null }) {
   const [menuOpen, setMenuOpen] = useState(false)
+
+  // Generate initials from user data
+  const getInitials = () => {
+    if (userData) {
+      return `${userData.firstName[0]}${userData.lastName[0]}`.toUpperCase()
+    }
+    return 'AR'
+  }
+
+  // Get full name
+  const getFullName = () => {
+    if (userData) {
+      return `${userData.firstName} ${userData.lastName}`
+    }
+    return 'John Doe'
+  }
 
   return (
     <div style={{
@@ -56,7 +82,7 @@ function NavBar({ theme, onToggleTheme, onLogin, isLoggedIn }: { theme: Theme; o
             }}>
               <AvatarUser
                 size="small"
-                initials="AR"
+                initials={getInitials()}
               />
             </div>
             <div style={{
@@ -67,15 +93,18 @@ function NavBar({ theme, onToggleTheme, onLogin, isLoggedIn }: { theme: Theme; o
               paddingRight: 'var(--u-space-one)'
             }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--u-space-quarter)' }}>
-                <Text size="small" style={{
+                <div style={{
                   color: 'var(--u-color-base-foreground)',
+                  fontSize: 'var(--u-font-size-text-small)',
+                  fontFamily: 'var(--u-font-body)',
+                  lineHeight: 1.4,
                   overflow: 'hidden',
                   textOverflow: 'ellipsis',
                   whiteSpace: 'nowrap',
                   maxWidth: '200px'
                 }}>
-                  John Doe
-                </Text>
+                  {getFullName()}
+                </div>
                 <div style={{ transform: 'rotate(180deg)', display: 'flex', alignItems: 'center' }}>
                   <IconUiExpandCollapseDown size="small" color="default" />
                 </div>
@@ -131,7 +160,7 @@ function NavBar({ theme, onToggleTheme, onLogin, isLoggedIn }: { theme: Theme; o
                 <button
                   onClick={() => {
                     setMenuOpen(false)
-                    onLogin() // Reuse onLogin to go back to login screen
+                    onLogout()
                   }}
                   style={{
                     background: 'none',
@@ -157,7 +186,7 @@ function NavBar({ theme, onToggleTheme, onLogin, isLoggedIn }: { theme: Theme; o
             {theme === 'dark' ? 'Light mode' : 'Dark mode'}
           </Button>
           <Button buttonType="subtle" size="small">Support</Button>
-          <Button buttonType="secondary" size="small">Create Account</Button>
+          <Button buttonType="secondary" size="small" onPress={onCreateAccount}>Create Account</Button>
           <Button buttonType="primary" size="small" onPress={onLogin}>Log In</Button>
         </div>
       )}
@@ -211,7 +240,7 @@ function ProfileBanner() {
 // AuthBanner
 // ---------------------------------------------------------------------------
 
-function AuthBanner({ onLogin }: { onLogin: () => void }) {
+function AuthBanner({ onLogin, onCreateAccount }: { onLogin: () => void; onCreateAccount: () => void }) {
   return (
     <div style={{
       backgroundColor: 'var(--u-color-background-callout)',
@@ -234,7 +263,15 @@ function AuthBanner({ onLogin }: { onLogin: () => void }) {
         maxWidth: '500px',
         width: '100%',
       }}>
-        <Title as="p" size="large">Log in or create an account to register an athlete.</Title>
+        <div style={{
+          fontSize: 'var(--u-font-size-text-large)',
+          fontWeight: 'var(--u-font-weight-bold)',
+          fontFamily: 'var(--u-font-body)',
+          lineHeight: 1.4,
+          color: 'var(--u-color-base-foreground)',
+        }}>
+          Log in or create an account to register an athlete.
+        </div>
         <Text size="small">We'll match your athlete to eligible registrations to help you get started faster.</Text>
       </div>
       <Button buttonType="primary" size="medium" onPress={onLogin}>Log In</Button>
@@ -242,6 +279,7 @@ function AuthBanner({ onLogin }: { onLogin: () => void }) {
         <Text size="small">Don't have an account?</Text>
         <a
           href="#"
+          onClick={(e) => { e.preventDefault(); onCreateAccount(); }}
           style={{
             color: 'var(--u-color-emphasis-foreground)',
             fontSize: 'var(--u-font-size-text-small)',
@@ -263,7 +301,7 @@ function AuthBanner({ onLogin }: { onLogin: () => void }) {
 // ProgramHeader
 // ---------------------------------------------------------------------------
 
-function ProgramHeader() {
+function ProgramHeader({ isLoggedIn }: { isLoggedIn: boolean }) {
   const [expanded, setExpanded] = useState(false)
   const isLong = true // Always show read more since we're using line clamping
 
@@ -273,11 +311,11 @@ function ProgramHeader() {
 
       {/* Title block: title + metadata, gap 8px */}
       <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--u-space-half)' }}>
-        <Title as="h2" size="xxlarge" color="contrast">
-          Sporting Stripes &amp; Stars Summer Camp | Summer 2025
+        <Title as="h2" size="xxlarge">
+          2025-26 Club Volleyball Tryouts
         </Title>
 
-        {/* Metadata: Camp · Sep 24, 2025 - Nov 1, 2025 — foreground (not subtle) */}
+        {/* Metadata: Tryout · Nov 8, 2025 - Nov 14, 2025 — foreground (not subtle) */}
         <div style={{
           display: 'flex',
           gap: 'var(--u-space-half)',
@@ -288,12 +326,12 @@ function ProgramHeader() {
           fontWeight: 'var(--u-font-weight-default)',
           lineHeight: 1.4,
         }}>
-          <span>Camp</span>
+          <span>Tryout</span>
           <span>·</span>
           <div style={{ display: 'flex', gap: 'var(--u-space-quarter)', alignItems: 'center' }}>
-            <span>Sep 24, 2025</span>
+            <span>Nov 8, 2025</span>
             <span>-</span>
-            <span>Nov 1, 2025</span>
+            <span>Nov 14, 2025</span>
           </div>
         </div>
       </div>
@@ -334,6 +372,9 @@ function ProgramHeader() {
           </button>
         )}
       </div>
+
+      {/* My Athletes - only show when logged in */}
+      {isLoggedIn && <MyAthletes />}
     </div>
   )
 }
@@ -342,26 +383,119 @@ function ProgramHeader() {
 // App
 // ---------------------------------------------------------------------------
 
-function App() {
+const LOGIN_STEP_KEY = 'ux-prototype-login-step'
+
+function AppContent() {
   const [theme, setTheme] = useState<Theme>('dark')
-  const [loginStep, setLoginStep] = useState<'none' | 'step1' | 'step2' | 'addAthlete' | 'loggedIn'>('none')
+  const { userData, setUserData } = useUser()
+
+  // Initialize loginStep from localStorage
+  const [loginStep, setLoginStepState] = useState<'none' | 'loginStep1' | 'loginStep2' | 'createStep1' | 'createStep2' | 'addAthlete' | 'loggedIn'>(() => {
+    try {
+      const stored = localStorage.getItem(LOGIN_STEP_KEY)
+      // If we have user data, restore to loggedIn, otherwise default to none
+      if (stored && userData) {
+        return stored as 'none' | 'loginStep1' | 'loginStep2' | 'createStep1' | 'createStep2' | 'addAthlete' | 'loggedIn'
+      }
+      return 'none'
+    } catch {
+      return 'none'
+    }
+  })
+
+  const [tempUserData, setTempUserData] = useState<{ firstName: string; lastName: string; email: string } | null>(null)
+
+  // Registration flow state
+  const [registrationStep, setRegistrationStep] = useState<'none' | 'selectAthlete' | 'questions' | 'checkout' | 'confirmation'>('none')
+  const [selectedRegistrationId, setSelectedRegistrationId] = useState<string | null>(null)
+  const [selectedAthleteId, setSelectedAthleteId] = useState<string | null>(null)
+  const [registrationAnswers, setRegistrationAnswers] = useState<Record<string, string>>({})
+  const [paymentData, setPaymentData] = useState<{
+    totalPaid: number
+    transactionFee: number
+    depositAmount: number
+  } | null>(null)
+
+  // Wrapper to persist loginStep to localStorage
+  const setLoginStep = (step: 'none' | 'loginStep1' | 'loginStep2' | 'createStep1' | 'createStep2' | 'addAthlete' | 'loggedIn') => {
+    setLoginStepState(step)
+    if (step === 'none') {
+      localStorage.removeItem(LOGIN_STEP_KEY)
+    } else {
+      localStorage.setItem(LOGIN_STEP_KEY, step)
+    }
+  }
+
+  // Sync loginStep with userData on mount - if we have userData, ensure we're logged in
+  React.useEffect(() => {
+    if (userData && loginStep === 'none') {
+      setLoginStep('loggedIn')
+    } else if (!userData && loginStep !== 'none' && loginStep !== 'loginStep1' && loginStep !== 'loginStep2' && loginStep !== 'createStep1' && loginStep !== 'createStep2') {
+      // If no userData but we're in a logged-in state (except auth flows), reset
+      setLoginStep('none')
+    }
+  }, [userData])
 
   // Show login step 1
-  if (loginStep === 'step1') {
+  if (loginStep === 'loginStep1') {
     return (
       <Environment environment={theme}>
-        <LoginStepOne onContinue={() => setLoginStep('step2')} />
+        <LoginStepOne
+          onContinue={() => setLoginStep('loginStep2')}
+          onCreateAccount={() => setLoginStep('createStep1')}
+        />
       </Environment>
     )
   }
 
   // Show login step 2
-  if (loginStep === 'step2') {
+  if (loginStep === 'loginStep2') {
     return (
       <Environment environment={theme}>
         <LoginStepTwo
-          onEditEmail={() => setLoginStep('step1')}
+          onEditEmail={() => setLoginStep('loginStep1')}
           onContinue={() => setLoginStep('addAthlete')}
+          onCreateAccount={() => setLoginStep('createStep1')}
+        />
+      </Environment>
+    )
+  }
+
+  // Show create account step 1
+  if (loginStep === 'createStep1') {
+    return (
+      <Environment environment={theme}>
+        <CreateAccountStepOne
+          onContinue={(firstName, lastName, email) => {
+            setTempUserData({ firstName, lastName, email })
+            setLoginStep('createStep2')
+          }}
+          onLogIn={() => setLoginStep('loginStep1')}
+        />
+      </Environment>
+    )
+  }
+
+  // Show create account step 2
+  if (loginStep === 'createStep2' && tempUserData) {
+    return (
+      <Environment environment={theme}>
+        <CreateAccountStepTwo
+          firstName={tempUserData.firstName}
+          lastName={tempUserData.lastName}
+          email={tempUserData.email}
+          onEditEmail={() => setLoginStep('createStep1')}
+          onContinue={() => {
+            // Store user data in context
+            setUserData({
+              firstName: tempUserData.firstName,
+              lastName: tempUserData.lastName,
+              email: tempUserData.email,
+              athletes: []
+            })
+            setLoginStep('addAthlete')
+          }}
+          onLogIn={() => setLoginStep('loginStep1')}
         />
       </Environment>
     )
@@ -371,9 +505,166 @@ function App() {
   if (loginStep === 'addAthlete') {
     return (
       <Environment environment={theme}>
-        <AddAthlete onFinish={() => setLoginStep('loggedIn')} />
+        <AddAthlete onFinish={(athletes) => {
+          // Add athletes to user data
+          if (userData) {
+            setUserData({
+              ...userData,
+              athletes: athletes.map(a => ({
+                firstName: a.firstName,
+                lastName: a.lastName,
+                dateOfBirth: a.dateOfBirth,
+                gender: a.gender,
+                grade: a.grade
+              }))
+            })
+          }
+          setLoginStep('loggedIn')
+        }} />
       </Environment>
     )
+  }
+
+  // Registration flow: Select Athlete
+  if (registrationStep === 'selectAthlete' && selectedRegistrationId) {
+    const registration = registrations.find(r => r.id === selectedRegistrationId)
+
+    if (registration) {
+      return (
+        <Environment environment={theme}>
+          <SelectAthlete
+            registration={registration}
+            onBack={() => {
+              setRegistrationStep('none')
+              setSelectedRegistrationId(null)
+            }}
+            onContinue={(athleteId) => {
+              setSelectedAthleteId(athleteId)
+              setRegistrationStep('questions')
+            }}
+          />
+        </Environment>
+      )
+    }
+  }
+
+  // Registration flow: Questions
+  if (registrationStep === 'questions') {
+    // Determine if we came from selectAthlete or skipped it
+    const registration = selectedRegistrationId ? registrations.find(r => r.id === selectedRegistrationId) : null
+    const hasMultipleEligibleAthletes = registration && userData
+      ? getEligibleAthletes(registration, userData.athletes).length > 1
+      : false
+
+    return (
+      <Environment environment={theme}>
+        <Questions
+          showedSelectAthlete={hasMultipleEligibleAthletes}
+          onBack={() => {
+            // Go back to selectAthlete if there were multiple athletes, otherwise go back to main
+            if (hasMultipleEligibleAthletes) {
+              setRegistrationStep('selectAthlete')
+            } else {
+              setRegistrationStep('none')
+              setSelectedRegistrationId(null)
+              setSelectedAthleteId(null)
+            }
+          }}
+          onContinue={(answers) => {
+            setRegistrationAnswers(answers)
+            setRegistrationStep('checkout')
+          }}
+        />
+      </Environment>
+    )
+  }
+
+  // Registration flow: Confirmation
+  if (registrationStep === 'confirmation' && selectedRegistrationId && selectedAthleteId && userData && paymentData) {
+    const registration = registrations.find(r => r.id === selectedRegistrationId)
+    const athleteIndex = parseInt(selectedAthleteId.replace('athlete-', ''))
+    const athlete = userData.athletes[athleteIndex]
+
+    if (registration && athlete) {
+      const hasMultipleEligibleAthletes = getEligibleAthletes(registration, userData.athletes).length > 1
+
+      return (
+        <Environment environment={theme}>
+          <ConfirmationScreen
+              athleteName={`${athlete.firstName} ${athlete.lastName}`}
+              athleteEmail={userData.email}
+              competitionName="2025-26 Club Volleyball Tryouts"
+              teamName={registration.name}
+              paymentOption="Full Payment"
+              registrationPrice={parseFloat(registration.price.replace('$', ''))}
+              depositAmount={paymentData.depositAmount}
+              transactionFee={paymentData.transactionFee}
+              totalPaid={paymentData.totalPaid}
+              seasonName="2025-26 Club Volleyball Tryouts"
+              organizationName={registration.name}
+              startDate={registration.startDate}
+              endDate={registration.endDate}
+              description={registration.description}
+              showedSelectAthlete={hasMultipleEligibleAthletes}
+              onBack={() => setRegistrationStep('checkout')}
+              onContinue={() => {
+                // Reset registration flow
+                setRegistrationStep('none')
+                setSelectedRegistrationId(null)
+                setSelectedAthleteId(null)
+                setRegistrationAnswers({})
+                setPaymentData(null)
+              }}
+            />
+        </Environment>
+      )
+    }
+  }
+
+  // Registration flow: Checkout
+  if (registrationStep === 'checkout' && selectedRegistrationId && selectedAthleteId && userData) {
+    const registration = registrations.find(r => r.id === selectedRegistrationId)
+    const athleteIndex = parseInt(selectedAthleteId.replace('athlete-', ''))
+    const athlete = userData.athletes[athleteIndex]
+
+    if (registration && athlete) {
+      const athleteName = `${athlete.firstName} ${athlete.lastName}`
+      const programPrice = parseFloat(registration.price.replace('$', ''))
+      // For this prototype, deposit is the full amount
+      const depositAmount = programPrice
+
+      // Determine if we showed the select athlete step
+      const hasMultipleEligibleAthletes = getEligibleAthletes(registration, userData.athletes).length > 1
+
+      return (
+        <Environment environment={theme}>
+          <Checkout
+            athleteName={athleteName}
+            competitionName="2025-26 Club Volleyball Tryouts"
+            registrationName={registration.name}
+            programPrice={programPrice}
+            depositAmount={depositAmount}
+            showedSelectAthlete={hasMultipleEligibleAthletes}
+            onBack={() => setRegistrationStep('questions')}
+            onComplete={() => {
+              // Calculate payment data
+              const transactionFee = Math.round((depositAmount * 0.029 + 0.30) * 100) / 100
+              const totalPaid = depositAmount + transactionFee
+
+              // Store payment data
+              setPaymentData({
+                totalPaid,
+                transactionFee,
+                depositAmount
+              })
+
+              // Navigate to confirmation screen
+              setRegistrationStep('confirmation')
+            }}
+          />
+        </Environment>
+      )
+    }
   }
 
   // If logged in, show main app
@@ -381,7 +672,8 @@ function App() {
 
   return (
     <Environment environment={theme}>
-      <TooltipProvider>
+      <PortalProvider>
+        <TooltipProvider>
         <style>{`
           .scroll-container {
             scrollbar-width: thin;
@@ -403,6 +695,9 @@ function App() {
             padding-left: var(--u-space-half) !important;
             padding-right: var(--u-space-half) !important;
           }
+          .athlete-avatar-button:hover {
+            opacity: 1 !important;
+          }
         `}</style>
         <div style={{
           backgroundColor: 'var(--u-color-background-canvas)',
@@ -414,8 +709,16 @@ function App() {
         <NavBar
           theme={theme}
           onToggleTheme={() => setTheme(t => t === 'dark' ? 'light' : 'dark')}
-          onLogin={() => setLoginStep('step1')}
+          onLogin={() => setLoginStep('loginStep1')}
+          onCreateAccount={() => setLoginStep('createStep1')}
+          onLogout={() => {
+            // Clear all user data and reset to fresh state
+            setUserData(null)
+            setTempUserData(null)
+            setLoginStep('none')
+          }}
           isLoggedIn={isLoggedIn}
+          userData={userData}
         />
 
         {/* Scroll container */}
@@ -433,24 +736,57 @@ function App() {
             {/* Auth banner - only show when not logged in */}
             {!isLoggedIn && (
               <div style={{ paddingBottom: 'var(--u-space-three)' }}>
-                <AuthBanner onLogin={() => setLoginStep('step1')} />
+                <AuthBanner
+                  onLogin={() => setLoginStep('loginStep1')}
+                  onCreateAccount={() => setLoginStep('createStep1')}
+                />
               </div>
             )}
 
             {/* Program content */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--u-space-three)', paddingBottom: 'var(--u-space-three)' }}>
-              <ProgramHeader />
+              <ProgramHeader isLoggedIn={isLoggedIn} />
 
-              {/* My Athletes - only show when logged in */}
-              {isLoggedIn && <MyAthletes />}
+              <RegistrationList
+                isLoggedIn={isLoggedIn}
+                onRegister={(registrationId) => {
+                  setSelectedRegistrationId(registrationId)
 
-              <RegistrationList isLoggedIn={isLoggedIn} />
+                  // Check if there are multiple eligible athletes
+                  const registration = registrations.find(r => r.id === registrationId)
+                  if (registration && userData) {
+                    const eligibleAthletes = getEligibleAthletes(registration, userData.athletes)
+
+                    if (eligibleAthletes.length === 1) {
+                      // Only one eligible athlete - skip to questions
+                      const athleteIndex = userData.athletes.findIndex(a =>
+                        a.firstName === eligibleAthletes[0].firstName &&
+                        a.lastName === eligibleAthletes[0].lastName
+                      )
+                      setSelectedAthleteId(`athlete-${athleteIndex}`)
+                      setRegistrationStep('questions')
+                    } else {
+                      // Multiple eligible athletes - show select athlete
+                      setRegistrationStep('selectAthlete')
+                    }
+                  }
+                }}
+              />
             </div>
           </div>
         </div>
       </div>
-      </TooltipProvider>
+        </TooltipProvider>
+      </PortalProvider>
     </Environment>
+  )
+}
+
+function App() {
+  return (
+    <UserProvider>
+      <AppContent />
+    </UserProvider>
   )
 }
 

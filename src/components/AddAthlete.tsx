@@ -1,17 +1,48 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { Button, Input, Text, Lead, Select, Checkbox, AvatarUser } from '@hudl/uniform-web'
 import { IconAdd } from '@hudl/uniform-web-icons'
 import hudlLogo from '../images/logo/hudl-logo 3.svg'
 
+export interface AthleteFormData {
+  firstName: string
+  lastName: string
+  dateOfBirth: string
+  gender: string
+  grade: string
+}
+
 interface AddAthleteProps {
-  onFinish: () => void
+  onFinish: (athletes: AthleteFormData[]) => void
 }
 
 export function AddAthlete({ onFinish }: AddAthleteProps) {
   const [formCount, setFormCount] = useState(1)
+  const athleteFormsRef = useRef<{ [key: number]: AthleteFormData }>({})
+  const [isValid, setIsValid] = useState(false)
+
+  const updateAthleteData = (index: number, data: AthleteFormData, valid: boolean) => {
+    athleteFormsRef.current[index] = data
+
+    // Check if all forms are valid
+    const allValid = Object.keys(athleteFormsRef.current).length === formCount &&
+                     Object.values(athleteFormsRef.current).every(athlete =>
+                       athlete.firstName.trim() !== '' &&
+                       athlete.lastName.trim() !== '' &&
+                       athlete.dateOfBirth !== '' &&
+                       athlete.gender !== '' &&
+                       athlete.grade !== ''
+                     )
+    setIsValid(allValid)
+  }
+
+  const handleFinish = () => {
+    const athletes = Object.values(athleteFormsRef.current)
+    onFinish(athletes)
+  }
 
   const handleAddAnotherAthlete = () => {
     setFormCount(formCount + 1)
+    setIsValid(false)
   }
 
   return (
@@ -25,14 +56,14 @@ export function AddAthlete({ onFinish }: AddAthleteProps) {
       padding: 'var(--u-space-one-and-half)',
     }}>
       <div style={{
-        backgroundColor: 'var(--u-color-background-callout)',
+        backgroundColor: 'var(--u-color-background-container)',
         borderRadius: '12px',
         padding: '40px',
-        maxWidth: '560px',
+        maxWidth: '540px',
         width: '100%',
         display: 'flex',
         flexDirection: 'column',
-        gap: 'var(--u-space-two)',
+        gap: 'var(--u-space-one)',
         alignItems: 'center',
       }}>
         <img src={hudlLogo} alt="Hudl" height="44" />
@@ -59,7 +90,7 @@ export function AddAthlete({ onFinish }: AddAthleteProps) {
         </div>
 
         {[...Array(formCount)].map((_, index) => (
-          <AthleteForm key={index} formIndex={index} />
+          <AthleteForm key={index} formIndex={index} onUpdate={(idx, data, valid) => updateAthleteData(idx, data, valid)} />
         ))}
 
         <div style={{
@@ -81,7 +112,8 @@ export function AddAthlete({ onFinish }: AddAthleteProps) {
             buttonType="primary"
             size="medium"
             isBlock
-            onPress={onFinish}
+            isDisabled={!isValid}
+            onPress={handleFinish}
           >
             Finish
           </Button>
@@ -91,7 +123,7 @@ export function AddAthlete({ onFinish }: AddAthleteProps) {
   )
 }
 
-function AthleteForm({ formIndex }: { formIndex: number }) {
+function AthleteForm({ formIndex, onUpdate }: { formIndex: number; onUpdate: (index: number, data: AthleteFormData, valid: boolean) => void }) {
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
   const [dateOfBirth, setDateOfBirth] = useState('')
@@ -99,6 +131,24 @@ function AthleteForm({ formIndex }: { formIndex: number }) {
   const [grade, setGrade] = useState('')
   const [graduationYear, setGraduationYear] = useState('')
   const [agreed, setAgreed] = useState(false)
+
+  // Update parent whenever form data changes
+  const updateParent = (updates: Partial<AthleteFormData>) => {
+    const currentData: AthleteFormData = {
+      firstName,
+      lastName,
+      dateOfBirth,
+      gender,
+      grade,
+      ...updates
+    }
+    const isValid = currentData.firstName.trim() !== '' &&
+                    currentData.lastName.trim() !== '' &&
+                    currentData.dateOfBirth !== '' &&
+                    currentData.gender !== '' &&
+                    currentData.grade !== ''
+    onUpdate(formIndex, currentData, isValid)
+  }
 
   // Calculate graduation year based on grade
   const calculateGraduationYear = (selectedGrade: string): string => {
@@ -133,7 +183,27 @@ function AthleteForm({ formIndex }: { formIndex: number }) {
   const handleGradeChange = (value: string) => {
     setGrade(value)
     setGraduationYear(calculateGraduationYear(value))
+    updateParent({ grade: value })
   }
+
+  // Map grade value to label for display
+  const gradeOptions = [
+    { label: 'Pre-K', value: 'pre-k' },
+    { label: 'Kindergarten', value: 'kindergarten' },
+    { label: '1st Grade', value: '1st' },
+    { label: '2nd Grade', value: '2nd' },
+    { label: '3rd Grade', value: '3rd' },
+    { label: '4th Grade', value: '4th' },
+    { label: '5th Grade', value: '5th' },
+    { label: '6th Grade', value: '6th' },
+    { label: '7th Grade', value: '7th' },
+    { label: '8th Grade', value: '8th' },
+    { label: '9th Grade', value: '9th' },
+    { label: '10th Grade', value: '10th' },
+    { label: '11th Grade', value: '11th' },
+    { label: '12th Grade', value: '12th' },
+  ]
+  const selectedGradeOption = gradeOptions.find(opt => opt.value === grade)
 
   // Generate display name and initials
   const displayName = firstName || lastName ? `${firstName} ${lastName}`.trim() : 'Athlete Name'
@@ -174,7 +244,10 @@ function AthleteForm({ formIndex }: { formIndex: number }) {
             <Input
               label="First Name"
               value={firstName}
-              onChange={setFirstName}
+              onChange={(val) => {
+                setFirstName(val)
+                updateParent({ firstName: val })
+              }}
               isRequired
             />
           </div>
@@ -182,7 +255,10 @@ function AthleteForm({ formIndex }: { formIndex: number }) {
             <Input
               label="Last Name"
               value={lastName}
-              onChange={setLastName}
+              onChange={(val) => {
+                setLastName(val)
+                updateParent({ lastName: val })
+              }}
               isRequired
             />
           </div>
@@ -197,7 +273,10 @@ function AthleteForm({ formIndex }: { formIndex: number }) {
               label="Date of Birth"
               type="date"
               value={dateOfBirth}
-              onChange={setDateOfBirth}
+              onChange={(val) => {
+                setDateOfBirth(val)
+                updateParent({ dateOfBirth: val })
+              }}
               isRequired
             />
           </div>
@@ -209,7 +288,11 @@ function AthleteForm({ formIndex }: { formIndex: number }) {
                 { label: 'Male', value: 'male' },
               ]}
               value={gender ? { label: gender === 'male' ? 'Male' : 'Female', value: gender } : null}
-              onChange={(option) => setGender(option?.value || '')}
+              onChange={(option) => {
+                const val = option?.value || ''
+                setGender(val)
+                updateParent({ gender: val })
+              }}
               placeholder="Select"
               isRequired
             />
@@ -223,26 +306,12 @@ function AthleteForm({ formIndex }: { formIndex: number }) {
           <div style={{ flex: 1 }}>
             <Select
               label="Grade"
-              options={[
-                { label: 'Pre-K', value: 'pre-k' },
-                { label: 'Kindergarten', value: 'kindergarten' },
-                { label: '1st Grade', value: '1st' },
-                { label: '2nd Grade', value: '2nd' },
-                { label: '3rd Grade', value: '3rd' },
-                { label: '4th Grade', value: '4th' },
-                { label: '5th Grade', value: '5th' },
-                { label: '6th Grade', value: '6th' },
-                { label: '7th Grade', value: '7th' },
-                { label: '8th Grade', value: '8th' },
-                { label: '9th Grade', value: '9th' },
-                { label: '10th Grade', value: '10th' },
-                { label: '11th Grade', value: '11th' },
-                { label: '12th Grade', value: '12th' },
-              ]}
-              value={grade ? { label: grade, value: grade } : null}
+              options={gradeOptions}
+              value={selectedGradeOption || null}
               onChange={(option) => handleGradeChange(option?.value || '')}
               placeholder="Select"
               helpText="Your athlete's grade for the 2025-2026 academic year."
+              menuPlacement="top"
               isRequired
             />
           </div>

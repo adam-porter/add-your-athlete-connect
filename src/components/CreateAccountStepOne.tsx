@@ -2,12 +2,14 @@ import { useState } from 'react'
 import { Button, Input, Text, Lead } from '@hudl/uniform-web'
 import hudlLogo from '../images/logo/hudl-logo 3.svg'
 
-interface LoginStepOneProps {
-  onContinue: () => void
-  onCreateAccount: () => void
+interface CreateAccountStepOneProps {
+  onContinue: (firstName: string, lastName: string, email: string) => void
+  onLogIn: () => void
 }
 
-export function LoginStepOne({ onContinue, onCreateAccount }: LoginStepOneProps) {
+export function CreateAccountStepOne({ onContinue, onLogIn }: CreateAccountStepOneProps) {
+  const [firstName, setFirstName] = useState('')
+  const [lastName, setLastName] = useState('')
   const [email, setEmail] = useState('')
 
   return (
@@ -34,7 +36,7 @@ export function LoginStepOne({ onContinue, onCreateAccount }: LoginStepOneProps)
         <img src={hudlLogo} alt="Hudl" height="44" />
 
         <Lead as="h2" size="small">
-          Log In
+          Create Account
         </Lead>
 
         <div style={{
@@ -50,14 +52,34 @@ export function LoginStepOne({ onContinue, onCreateAccount }: LoginStepOneProps)
             width: '100%',
           }}>
             <Input
-              label="Email"
-              type="email"
-              value={email}
-              onChange={setEmail}
+              label="First Name"
+              type="text"
+              value={firstName}
+              onChange={setFirstName}
               isRequired
             />
 
-            <Button buttonType="primary" size="medium" isBlock onPress={onContinue}>
+            <div style={{ marginTop: 0 }}>
+              <Input
+                label="Last Name"
+                type="text"
+                value={lastName}
+                onChange={setLastName}
+                isRequired
+              />
+            </div>
+
+            <div style={{ marginTop: 0 }}>
+              <Input
+                label="Email"
+                type="email"
+                value={email}
+                onChange={setEmail}
+                isRequired
+              />
+            </div>
+
+            <Button buttonType="primary" size="medium" isBlock onPress={() => onContinue(firstName, lastName, email)}>
               Continue
             </Button>
 
@@ -68,13 +90,13 @@ export function LoginStepOne({ onContinue, onCreateAccount }: LoginStepOneProps)
               lineHeight: 1.4,
               textAlign: 'center',
             }}>
-              Don't have an account?{' '}
-              <a href="#" onClick={(e) => { e.preventDefault(); onCreateAccount(); }} style={{
+              Already have an account?{' '}
+              <a href="#" onClick={(e) => { e.preventDefault(); onLogIn(); }} style={{
                 color: 'var(--u-color-emphasis-foreground)',
                 textDecoration: 'none',
                 cursor: 'pointer',
               }}>
-                Create Account
+                Log In
               </a>
             </div>
           </div>

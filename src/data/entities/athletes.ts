@@ -1,4 +1,4 @@
-import type { Athlete } from './types'
+import type { Athlete } from '../types'
 
 export const athletes: Athlete[] = [
   // Lincoln Lions (Basketball)

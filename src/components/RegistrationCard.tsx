@@ -1,18 +1,24 @@
 import { useState } from 'react'
-import { Title, Text, Button, Note } from '@hudl/uniform-web'
+import { Title, Text, Button, Note, AvatarUser } from '@hudl/uniform-web'
 import { IconUiExpandCollapseDown, IconUiExpandCollapseUp } from '@hudl/uniform-web-icons'
+import { Tooltip } from '@hudl/uniform-web-tooltip'
 import { RegistrationDetails } from './RegistrationDetails'
 import { getEligibleAthletes } from '../utils/eligibility'
 import type { RegistrationItem } from '../types'
+import type { Athlete } from '../contexts/UserContext'
 
 interface RegistrationCardProps {
   registration: RegistrationItem
   isLoggedIn: boolean
+  userAthletes?: Athlete[]
+  onRegister?: (registrationId: string) => void
 }
 
-export function RegistrationCard({ registration, isLoggedIn }: RegistrationCardProps) {
+export function RegistrationCard({ registration, isLoggedIn, userAthletes = [], onRegister }: RegistrationCardProps) {
   const [expanded, setExpanded] = useState(false)
-  const hasEligibleAthletes = isLoggedIn && getEligibleAthletes(registration).length > 0
+  const [hoveredAthleteIndex, setHoveredAthleteIndex] = useState<number | null>(null)
+  const eligibleAthletes = isLoggedIn ? getEligibleAthletes(registration, userAthletes) : []
+  const hasEligibleAthletes = eligibleAthletes.length > 0
 
   return (
     <div style={{
@@ -105,17 +111,51 @@ export function RegistrationCard({ registration, isLoggedIn }: RegistrationCardP
           <div style={{ display: 'flex', gap: 'var(--u-space-half)', alignItems: 'center', justifyContent: 'space-between' }}>
             {isLoggedIn ? (
               <>
-                {/* Left: Eligible athletes list */}
-                <div style={{ display: 'flex', gap: 'var(--u-space-eighth)', alignItems: 'center', flex: 1 }}>
+                {/* Left: Eligible athletes avatars */}
+                <div style={{ display: 'flex', gap: 'var(--u-space-quarter)', alignItems: 'center', flex: 1 }}>
                   {hasEligibleAthletes ? (
                     <>
                       <Text size="small">Eligible:</Text>
-                      <div style={{ display: 'flex', gap: 'var(--u-space-eighth)', alignItems: 'center', flexWrap: 'wrap' }}>
-                        {getEligibleAthletes(registration).map((athlete, index, array) => (
-                          <Text size="small" color="default" key={athlete.name}>
-                            {athlete.name}{index < array.length - 1 ? ',' : ''}
-                          </Text>
-                        ))}
+                      {/* Avatar stack */}
+                      <div style={{ display: 'flex', alignItems: 'center' }}>
+                        {eligibleAthletes.map((athlete, index) => {
+                          const name = 'firstName' in athlete ? `${athlete.firstName} ${athlete.lastName}` : athlete.name
+                          const initials = 'firstName' in athlete
+                            ? `${athlete.firstName[0]}${athlete.lastName[0]}`.toUpperCase()
+                            : athlete.name.split(' ').map(n => n[0]).join('').toUpperCase().slice(0, 2)
+                          return (
+                            <div
+                              key={name}
+                              style={{
+                                marginLeft: index > 0 ? '-8px' : '0',
+                                position: 'relative',
+                                zIndex: hoveredAthleteIndex === index ? eligibleAthletes.length + 1 : eligibleAthletes.length - index,
+                                transition: 'transform 0.2s ease',
+                                transform: hoveredAthleteIndex === index ? 'scale(1.1)' : 'scale(1)',
+                              }}
+                              onMouseEnter={() => setHoveredAthleteIndex(index)}
+                              onMouseLeave={() => setHoveredAthleteIndex(null)}
+                            >
+                              <Tooltip
+                                content={name}
+                                type="label"
+                                position="top"
+                                asChild
+                                className="athlete-tooltip"
+                              >
+                                <div style={{
+                                  filter: hoveredAthleteIndex === index ? 'drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2))' : 'none',
+                                  transition: 'filter 0.2s ease',
+                                }}>
+                                  <AvatarUser
+                                    size="small"
+                                    initials={initials}
+                                  />
+                                </div>
+                              </Tooltip>
+                            </div>
+                          )
+                        })}
                       </div>
                     </>
                   ) : (
@@ -128,7 +168,14 @@ export function RegistrationCard({ registration, isLoggedIn }: RegistrationCardP
                   <Note size="small" type="information">
                     <Text size="small">Only ## spots left</Text>
                   </Note>
-                  <Button buttonType="primary" size="small" isDisabled={!hasEligibleAthletes}>Register</Button>
+                  <Button
+                    buttonType="primary"
+                    size="small"
+                    isDisabled={!hasEligibleAthletes}
+                    onPress={() => onRegister?.(registration.id)}
+                  >
+                    Register
+                  </Button>
                 </div>
               </>
             ) : (
