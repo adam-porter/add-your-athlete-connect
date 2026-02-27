@@ -8,25 +8,31 @@ Save the current prototype by committing changes and pushing to GitHub.
 
 **Workflow:**
 
-1. **Check git status** - Run `git status` to see what's changed
+1. **Run a UX DNA review** - Before saving, ask `ux-dna:advisor` to review the current state of the prototype
+   - Describe the key screens and interactions that have been built
+   - Share the review results with the user: what's passing, what concerns exist, what's failing
+   - If there are **Fail**-level issues, highlight them clearly and ask if the user wants to fix them before saving, or save anyway
+   - If there are only **Concern**-level issues, note them but proceed — don't block the save
+
+2. **Check git status** - Run `git status` to see what's changed
    - Show the user a summary of changed files
    - Confirm they want to save these changes
 
-2. **Stage files** - Add relevant files to staging
+3. **Stage files** - Add relevant files to staging
    - Add all src/ files and any new components
    - Add package.json if dependencies changed
    - DON'T add node_modules, dist, or other build artifacts
 
-3. **Create commit** - Commit with a descriptive message
+4. **Create commit** - Commit with a descriptive message
    - Ask user for a commit message (suggest a default based on changes)
    - Include co-authored by: "Co-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>"
    - Use heredoc format for the commit message
 
-4. **Push to GitHub** - Push the branch to remote
+5. **Push to GitHub** - Push the branch to remote
    - Use `git push -u origin [branch-name]` if first push
    - Use `git push` for subsequent pushes
 
-5. **Provide GitHub URL** - Tell the user:
+6. **Provide GitHub URL** - Tell the user:
    - Changes committed and pushed
    - Provide the GitHub branch URL so they can view it
    - Remind them they can create a PR if they want to merge to main

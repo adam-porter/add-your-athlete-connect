@@ -2,6 +2,16 @@
 
 This is a prototyping template repository. Each prototype lives on its own git branch.
 
+## UX DNA — Always On
+
+**The `ux-dna` plugin is a core part of how you work in this repo, not an optional add-on.**
+
+The plugin's primary agent is `ux-dna:advisor`. It's the single entry point — use it for any UX or design question, at any point in the process. It answers guidelines questions, helps scope what needs to be built, and knows when and how to invoke the rest of the plugin's capabilities.
+
+**Don't wait to be asked.** Before designing, ask what applies. While building, ask about patterns and copy. Before saving, ask for a review. When in doubt, ask. The advisor handles routing — you don't need to know what else the plugin contains.
+
+---
+
 ## Workflow
 
 **Starting a new prototype:**
