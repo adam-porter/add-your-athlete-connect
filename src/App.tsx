@@ -22,6 +22,7 @@ import type { Theme } from './types'
 
 const PROGRAM_DESCRIPTION = `Competitive tryouts for the 2025-26 USA Volleyball club season. Open to athletes ages 12U through 18U, these single-day evaluations are designed to assess player skills in a competitive environment. Coaches will evaluate technical skills, court awareness, and team dynamics to determine roster placements. All skill levels welcome—come ready to compete and showcase your abilities. Age eligibility is determined as of August 31, 2026.`
 
+
 // ---------------------------------------------------------------------------
 // NavBar
 // ---------------------------------------------------------------------------
