@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Environment, Title, Text, Button, Note, AvatarTeam, AvatarUser } from '@hudl/uniform-web'
+import { Environment, Title, Text, Button, Note, AvatarTeam, AvatarUser, ToastMessenger } from '@hudl/uniform-web'
 import { IconUiExpandCollapseDown } from '@hudl/uniform-web-icons'
 import { TooltipProvider } from '@hudl/uniform-web-tooltip'
 import { PortalProvider } from '@hudl/uniform-web-portal'
@@ -520,6 +520,16 @@ function AppContent() {
               }))
             })
           }
+
+          // Show success toast
+          const athleteCount = athletes.length
+          const athleteText = athleteCount === 1 ? 'athlete' : 'athletes'
+          ToastMessenger.show({
+            text: `${athleteCount} ${athleteText} added to your account`,
+            type: 'success',
+            duration: 'short'
+          })
+
           setLoginStep('loggedIn')
         }} />
       </Environment>
@@ -786,6 +796,7 @@ function AppContent() {
 function App() {
   return (
     <UserProvider>
+      <ToastMessenger />
       <AppContent />
     </UserProvider>
   )

@@ -52,7 +52,8 @@ export function CreateAccountStepOne({ onContinue, onLogIn }: CreateAccountStepO
             width: '100%',
           }}>
             <Input
-              label="First Name"
+              aria-label="First Name"
+              placeholder="First Name"
               type="text"
               value={firstName}
               onChange={setFirstName}
@@ -61,7 +62,8 @@ export function CreateAccountStepOne({ onContinue, onLogIn }: CreateAccountStepO
 
             <div style={{ marginTop: 0 }}>
               <Input
-                label="Last Name"
+                aria-label="Last Name"
+                placeholder="Last Name"
                 type="text"
                 value={lastName}
                 onChange={setLastName}
@@ -71,7 +73,8 @@ export function CreateAccountStepOne({ onContinue, onLogIn }: CreateAccountStepO
 
             <div style={{ marginTop: 0 }}>
               <Input
-                label="Email"
+                aria-label="Email Address"
+                placeholder="Email Address"
                 type="email"
                 value={email}
                 onChange={setEmail}

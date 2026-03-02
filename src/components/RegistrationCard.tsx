@@ -163,11 +163,8 @@ export function RegistrationCard({ registration, isLoggedIn, userAthletes = [], 
                   )}
                 </div>
 
-                {/* Right: note + register button */}
-                <div style={{ display: 'flex', gap: 'var(--u-space-one)', alignItems: 'center', flexShrink: 0 }}>
-                  <Note size="small" type="information">
-                    <Text size="small">Only ## spots left</Text>
-                  </Note>
+                {/* Right: register button */}
+                <div style={{ display: 'flex', alignItems: 'center', flexShrink: 0 }}>
                   <Button
                     buttonType="primary"
                     size="small"

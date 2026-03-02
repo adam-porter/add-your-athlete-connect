@@ -54,7 +54,8 @@ export function CreateAccountStepTwo({ firstName, lastName, email, onEditEmail, 
           }}>
             <div style={{ position: 'relative' }}>
               <Input
-                label="Email"
+                aria-label="Email Address"
+                placeholder="Email Address"
                 type="email"
                 value={email}
                 isReadOnly
@@ -68,7 +69,7 @@ export function CreateAccountStepTwo({ firstName, lastName, email, onEditEmail, 
                 style={{
                   position: 'absolute',
                   right: 'var(--u-space-half)',
-                  top: 'calc(50% + 10px)',
+                  top: '50%',
                   transform: 'translateY(-50%)',
                 }}
               >
@@ -77,7 +78,8 @@ export function CreateAccountStepTwo({ firstName, lastName, email, onEditEmail, 
             </div>
             <div style={{ marginTop: 'var(--u-space-half)' }}>
               <Input
-                label="Password"
+                aria-label="Password"
+                placeholder="Password"
                 type="password"
                 value={password}
                 onChange={setPassword}
