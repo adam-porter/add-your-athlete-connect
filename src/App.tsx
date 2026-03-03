@@ -390,19 +390,8 @@ function AppContent() {
   const [theme, setTheme] = useState<Theme>('dark')
   const { userData, setUserData } = useUser()
 
-  // Initialize loginStep from localStorage
-  const [loginStep, setLoginStepState] = useState<'none' | 'loginStep1' | 'loginStep2' | 'createStep1' | 'createStep2' | 'addAthlete' | 'loggedIn'>(() => {
-    try {
-      const stored = localStorage.getItem(LOGIN_STEP_KEY)
-      // If we have user data, restore to loggedIn, otherwise default to none
-      if (stored && userData) {
-        return stored as 'none' | 'loginStep1' | 'loginStep2' | 'createStep1' | 'createStep2' | 'addAthlete' | 'loggedIn'
-      }
-      return 'none'
-    } catch {
-      return 'none'
-    }
-  })
+  // Initialize loginStep - always start at 'none' (program landing page)
+  const [loginStep, setLoginStepState] = useState<'none' | 'loginStep1' | 'loginStep2' | 'createStep1' | 'createStep2' | 'addAthlete' | 'loggedIn'>('none')
 
   const [tempUserData, setTempUserData] = useState<{ firstName: string; lastName: string; email: string } | null>(null)
 
@@ -427,9 +416,9 @@ function AppContent() {
     }
   }
 
-  // Sync loginStep with userData on mount - if we have userData, ensure we're logged in
+  // Sync loginStep with userData - if we have userData and not in auth flow, set to loggedIn
   React.useEffect(() => {
-    if (userData && loginStep === 'none') {
+    if (userData && loginStep !== 'addAthlete' && loginStep !== 'loginStep1' && loginStep !== 'loginStep2' && loginStep !== 'createStep1' && loginStep !== 'createStep2') {
       setLoginStep('loggedIn')
     } else if (!userData && loginStep !== 'none' && loginStep !== 'loginStep1' && loginStep !== 'loginStep2' && loginStep !== 'createStep1' && loginStep !== 'createStep2') {
       // If no userData but we're in a logged-in state (except auth flows), reset
