@@ -1,5 +1,5 @@
 {
-  "buildCommand": "vite build",
-  "framework": "vite",
-  "installCommand": "npm config set registry https://npm-pull.hudltools.com/ && npm config set @hudl:registry https://npm-pull.hudltools.com/ && npm install --legacy-peer-deps"
+  "buildCommand": "echo 'Using pre-built dist folder'",
+  "outputDirectory": "dist",
+  "installCommand": "echo 'No install needed - using pre-built files'"
 }
