@@ -1,5 +1,5 @@
 {
   "buildCommand": "vite build",
   "framework": "vite",
-  "installCommand": "npm ci || npm install"
+  "installCommand": "npm install --legacy-peer-deps --no-fund --no-audit"
 }
